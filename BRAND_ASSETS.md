@@ -16,3 +16,5 @@ Generic competence categories like REST/API, SQL/Data, UI/UX, observability as a
 Grafana Loki is bundled as a local vector reconstructed from the original vector polygon coordinates published in the Grafana repository (commit `04775ec940c07837bbe8a3f5fb84befb6910989a`, `loki_icon.svg`); its underlying mark belongs to Grafana Labs.
 
 When updating: keep logo proportions unchanged; do not recolor, rotate, stretch, skew, or overlay shapes onto vendor marks. Keep the approved brand colors and adequate clear space around each vector, especially Docker (minimum height 24 px as specified in its latest guide). The containing card may have separate hover effects; the logo itself must not be animated or distorted.
+
+The upstream Devicon MIT notice is included in [DEVICON-LICENSE.txt](assets/brand-logos/DEVICON-LICENSE.txt). The local IBM Plex Sans Arabic, Plus Jakarta Sans, and Instrument Serif WOFF2 files came from the Google Fonts API. The corresponding SIL Open Font License notices are kept in [assets/fonts](assets/fonts). The standalone export includes the third-party notices.

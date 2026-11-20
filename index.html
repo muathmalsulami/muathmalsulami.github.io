@@ -1,143 +1,1164 @@
 <!doctype html>
 <html lang="ar" dir="rtl" data-lang="ar" data-theme="dark">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#100b21">
-<meta name="description" content="معاذ السلمي — مطور برمجيات وخريج ذكاء اصطناعي. تطوير الواجهات وتكامل الحلول ومراقبة الأنظمة، مع مشاريع مكتملة ومفاهيم قيد البحث.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MUATH — Atelier / Real · Pixel · Proof">
-<meta property="og:description" content="A personal portfolio built from real work, engineering curiosity, and a distinctive digital identity.">
-<title>معاذ السلمي — MUATH / Atelier 09 — Real → Pixel → Proof</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="atelier.css">
-<link rel="stylesheet" href="brand-polish.css">
-<script defer src="app.js"></script>
-<script defer src="atelier.js"></script>
-</head>
-<body>
-<a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
-<div class="reading-progress" role="presentation"><div id="readingProgress"></div></div>
-<div class="page-aura" aria-hidden="true"></div>
-<header class="site-header" id="top">
-  <div class="header-inner container">
-    <a class="brand" href="#home" aria-label="MUATH home">
-      <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M7 35 15 10l9 14 9-14 8 25" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><rect x="37" y="6" width="5" height="5" fill="currentColor"/></svg></span>
-      <span class="brand-name"><b>MUATH</b><small data-i18n="brandArabic">معاذ السلمي</small></span>
-    </a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="#home" class="is-active" data-i18n="navHome">الرئيسية</a>
-      <a href="#work" data-i18n="navWork">الأعمال</a><a href="#evidence" data-at="navEvidence">المختبر</a>
-      <a href="#approach" data-i18n="navApproach">المنهج</a>
-      <a href="#skills" data-i18n="navSkills">المهارات</a>
-      <a href="#about" data-i18n="navAbout">عني</a>
-      <a href="#contact" data-i18n="navContact">تواصل</a>
-    </nav>
-    <div class="header-controls">
-      <button class="language-switch" type="button" id="languageSwitch" aria-label="Switch between Arabic and English"><span data-language="ar" class="is-active">AR</span><span data-language="en">EN</span></button>
-      <button class="icon-button command-launch" id="commandLaunch" type="button" aria-label="فتح لوحة التنقل السريع" title="Quick navigation (Ctrl+K)"><span aria-hidden="true">⌘ K</span></button>
-      <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="تغيير المظهر" aria-pressed="false" title="Toggle appearance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.7a8.6 8.6 0 1 1-11.9-12A8.6 8.6 0 0 0 20.2 15.7Z"/></svg></button>
-      <button class="icon-button mobile-menu-button" id="menuToggle" type="button" aria-label="فتح القائمة" aria-controls="mobileNav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#100b21" />
+    <meta
+      name="description"
+      content="معاذ السلمي — مطور برمجيات وخريج ذكاء اصطناعي. تطوير الواجهات وتكامل الحلول ومراقبة الأنظمة، مع مشاريع مكتملة ومفاهيم قيد البحث."
+    />
+    <link rel="canonical" href="https://muathmalsulami.github.io/" />
+    <meta property="og:url" content="https://muathmalsulami.github.io/" />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta
+      property="og:image"
+      content="https://muathmalsulami.github.io/assets/portfolio-share.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Muath Alsulami's VR portrait and pixel character"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="MUATH — Atelier / Real · Pixel · Proof"
+    />
+    <meta
+      property="og:description"
+      content="Muath Alsulami · Software development, Flask integration, and systems observability in Makkah, Saudi Arabia."
+    />
+    <title>معاذ السلمي — MUATH / Atelier 09 — Real → Pixel → Proof</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="atelier.css" />
+    <link rel="stylesheet" href="brand-polish.css" />
+    <script defer src="app.js"></script>
+    <script defer src="atelier.js"></script>
+  </head>
+  <body>
+    <noscript
+      ><style>
+        .header-controls,
+        .scene-switch,
+        .filter-buttons,
+        .feature-link,
+        .proof-lab-tabs,
+        .scenario-controls,
+        .method-switch,
+        .skills-section {
+          display: none !important;
+        }
+      </style></noscript
+    >
+    <a class="skip-link" data-i18n="skipLink" href="#main">تجاوز إلى المحتوى</a>
+    <div class="reading-progress" role="presentation">
+      <div id="readingProgress"></div>
     </div>
-  </div>
-  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
-    <a href="#home" data-i18n="navHome">الرئيسية</a><a href="#work" data-i18n="navWork">الأعمال</a><a href="#evidence" data-at="navEvidence">المختبر</a><a href="#approach" data-i18n="navApproach">المنهج</a><a href="#skills" data-i18n="navSkills">المهارات</a><a href="#about" data-i18n="navAbout">عني</a><a href="#contact" data-i18n="navContact">تواصل</a>
-  </nav>
-</header>
-<main id="main">
-<section class="hero container" id="home" aria-labelledby="heroTitle">
- <div class="hero-grid">
-  <div class="hero-scene" id="heroScene" aria-label="مشهد فني يجمع الصورة الحقيقية بنظارة الواقع الافتراضي وشخصية البكسل">
-   <div class="hero-sky"></div>
-   <div class="hero-orb"></div>
-   <div class="hero-gridlines"></div>
-   <div class="scene-edition" aria-hidden="true">MUATH / ATELIER <span>09</span></div>
-   <div class="hero-portrait"><img src="assets/vr-person.webp" alt="معاذ يرتدي نظارة الواقع الافتراضي مع وحدات التحكم" fetchpriority="high" width="995" height="891"></div>
-   <div class="pixel-trail" aria-hidden="true"></div>
-   <div class="orbit-line" aria-hidden="true"><svg viewBox="0 0 800 630" preserveAspectRatio="none"><path d="M-24 454C74 305 201 335 294 386S531 453 699 209"/></svg></div>
-   <div class="hero-pixel"><img src="assets/pixel-muath.webp" width="940" height="627" alt="نسخة بكسل فنية لمعاذ يعمل على جهاز الحاسوب" fetchpriority="high"></div>
-   <div class="hero-bridge" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-   <div class="scene-caption"><span class="caption-dot"></span> <span data-at="sceneSignature">REALITY / DIGITAL SELF</span></div>
-   <div class="scene-switch" role="group" aria-label="Visual scene mode">
-    <button type="button" data-view="all" class="is-active" aria-pressed="true">01 <span>REAL + PIXEL</span></button>
-    <button type="button" data-view="real" aria-pressed="false">02 <span>REAL</span></button>
-    <button type="button" data-view="proof" aria-pressed="false">03 <span>PROOF</span></button>
-   </div>
-   <div class="scene-proof" aria-live="polite"><small>BEHIND THE IMAGE / PROOF</small><strong data-at="sceneProofTitle">A person. A builder. Actual work.</strong><p data-at="sceneProofBody">Numoo / UI + Flask integration · NCM / monitoring and logs</p><a href="#work" data-at="sceneProofLink">Explore evidence ↗</a></div>
-   <div class="scene-watermark" aria-hidden="true">M<span>.</span></div>
-  </div>
-  <div class="hero-copy">
-   <p class="eyebrow accent-eyebrow"><span class="eyebrow-line"></span><span data-i18n="heroEyebrow">من مكة، إلى العالم الرقمي</span><span class="eyebrow-spark">✳</span></p>
-   <h1 id="heroTitle"><span data-i18n="heroGreeting">مرحبًا، أنا</span><strong data-i18n="heroName">معاذ السلمي</strong></h1>
-   <div class="hero-en" lang="en">Muath Alsulami<span class="orange-dot">.</span></div>
-   <p class="hero-role" data-i18n="heroRole">Software Developer <span class="role-divider">/</span> AI Enthusiast</p>
-   <p class="hero-lead" data-i18n="heroLead">أبني الواجهات، أربط التقنيات، وأهتم بما يحدث بعد التشغيل. هذا الموقع يوثّق ما أنجزته فعلًا، وما أعمل على تطويره الآن.</p>
-   <div class="hero-ctas"><a href="#work" class="button button-primary"><span data-i18n="viewWork">استكشف أعمالي</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a><a href="professional-summary.html" class="button button-outline"><span data-i18n="professionalSummary">ملخصي المهني</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h8l4 4v12H7zM15 4v5h4M10 13h6m-6 4h5"/></svg></a></div>
-   <div class="hero-meta"><span class="meta-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-7.5 7-13a7 7 0 1 0-14 0c0 5.5 7 13 7 13Z"/><circle cx="12" cy="9" r="2"/></svg><span data-i18n="location">مكة المكرمة، السعودية</span></span><span class="hero-meta-separator"></span><a href="https://github.com/muathmalsulami" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/muath-m-alsulami/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-   <div class="hero-signature"><span>REAL</span><i></i><span>PIXEL</span><i></i><span>PROOF</span></div>
-   <p class="hero-private-note" data-at="signatureNote">ليس استعراض مؤثرات؛ تجربة تشرح ما بنيته وما أتعلمه.</p>
-  </div>
- </div>
- <div class="proof-rail">
-  <div><span class="rail-symbol">✦</span><div><strong data-i18n="railOne">بكالوريوس الذكاء الاصطناعي</strong><small data-i18n="railOneSub">جامعة أم القرى · 2026 · 3.54/4</small></div></div>
-  <div><span class="rail-symbol">⌘</span><div><strong data-i18n="railTwo">تجربة عملية في المراقبة</strong><small data-i18n="railTwoSub">المركز الوطني للأرصاد · 2025</small></div></div>
-  <div><span class="rail-symbol">◇</span><div><strong data-i18n="railThree">مشاريع وتكامل برمجي</strong><small data-i18n="railThreeSub">Numoo · Flask · GitHub</small></div></div>
-  <a href="#journey" class="rail-link" aria-label="Journey">↗</a>
- </div>
-</section>
-<section class="section container featured-section" id="work" aria-labelledby="featuredTitle">
- <div class="section-head reveal"><div><span class="section-index">01 / SELECTED WORK</span><h2 id="featuredTitle" data-i18n="featuredTitle">أعمال حقيقية. <em>قصص وراء الكود.</em></h2></div><p data-i18n="featuredIntro">قبل أي مؤثر بصري، هذه الأعمال هي ما يدعم سيرتي: مساهمات موثقة، تدريب عملي، ومشروع منشور.</p></div>
- <div class="featured-grid">
-  <article class="feature-card feature-primary reveal" aria-label="Numoo capstone project"><div class="feature-visual numoo-visual"><img src="assets/project-art/numoo.svg" alt="رسم توضيحي مفاهيمي لواجهة Numoo وليس لقطة من النظام الفعلي" loading="lazy"><span class="visual-disclaimer" data-i18n="visualConcept">تمثيل بصري توضيحي</span></div><div class="feature-content"><div class="feature-topline"><span class="feature-number">01 / CAPSTONE</span><span class="feature-status"><span></span><span data-i18n="statusCompleted">مكتمل</span></span></div><h3>Numoo <span>نمو</span></h3><p data-i18n="numooFeatured">مشروع تخرج جماعي للتنبؤ باتجاه الأسهم. دوري: تطوير الواجهات وربطها عبر Flask بنماذج طوّرها الفريق.</p><div class="feature-tags"><span>UI / UX</span><span>Flask</span><span>Integration</span></div><button type="button" class="feature-link" data-project="numoo"><span data-i18n="openCase">افتح دراسة الحالة</span><span>↗</span></button></div></article>
-  <article class="feature-card feature-side reveal"><div class="feature-visual"><img src="assets/project-art/ncm.svg" alt="رسم توضيحي لمفاهيم المراقبة وليس بيانات حقيقية" loading="lazy"><span class="visual-disclaimer" data-i18n="visualConcept">تمثيل بصري توضيحي</span></div><div class="feature-content"><div class="feature-topline"><span class="feature-number">02 / INTERNSHIP</span><span class="feature-status"><span></span><span data-i18n="statusCompleted">مكتمل</span></span></div><h3 data-i18n="ncmTitle">مراقبة الأنظمة</h3><p data-i18n="ncmFeatured">أعمال تدريبية داخل تقنية المعلومات باستخدام Docker وPrometheus وGrafana وLoki.</p><button type="button" class="feature-link" data-project="ncm"><span data-i18n="openCase">افتح دراسة الحالة</span><span>↗</span></button></div></article>
-  <article class="feature-card feature-side reveal"><div class="feature-visual"><img src="assets/project-art/pathy.svg" alt="تصميم بياني يرمز لفروع Git وتطوير موقع منشور" loading="lazy"><span class="visual-disclaimer" data-i18n="visualConcept">تمثيل بصري توضيحي</span></div><div class="feature-content"><div class="feature-topline"><span class="feature-number">03 / PUBLISHED</span><span class="feature-status"><span></span><span data-i18n="statusPublished">منشور</span></span></div><h3>Git × Pathy</h3><p data-i18n="pathyFeatured">موقع تعليمي منشور على GitHub Pages مع اهتمام بالتجاوب والأداء وإمكانية الوصول.</p><button type="button" class="feature-link" data-project="pathy"><span data-i18n="openCase">افتح دراسة الحالة</span><span>↗</span></button></div></article>
- </div>
-</section>
-<section class="section container evidence-section" id="evidence" aria-labelledby="evidenceTitle">
- <div class="section-head reveal"><div><span class="section-index">02 / THE PROOF PLAYGROUND</span><h2 id="evidenceTitle" data-at-html="evidenceTitle">التقنية لا تُشرح فقط. <em>جرّب الفكرة.</em></h2></div><p data-at="evidenceIntro">تجربتان توضيحيتان تفاعليتان: مسار تكامل التطبيق، وكيف تساعد المراقبة على فهم النظام. ليست بيانات حقيقية من الأرصاد أو نتائج Numoo.</p></div>
- <div class="proof-lab reveal" id="proofLab" data-lab="observe" data-signal="steady">
-  <div class="proof-lab-head"><div class="proof-heading"><span class="proof-kicker">MUATH / INTERACTIVE SYSTEM STUDY</span><strong data-at="proofHeadline">Inside the system.</strong></div><div class="proof-lab-tabs" role="tablist" aria-label="Interactive demo"><button type="button" data-lab-mode="observe" role="tab" aria-selected="true" class="active">01 / OBSERVE</button><button type="button" data-lab-mode="integrate" role="tab" aria-selected="false">02 / INTEGRATE</button></div></div>
-  <div class="proof-lab-body">
-   <div class="proof-lab-story"><div class="proof-indicator"><span></span><span data-at="labSimBadge">EXPLANATORY SIMULATION / NOT LIVE DATA</span></div><h3 id="labTitle" data-at="labObserveTitle">ماذا لو تغيرت حالة النظام؟</h3><p id="labDescription" data-at="labObserveDesc">بدل رسم بياني ثابت، غيّر السيناريو وشاهد كيف تتبدل الإشارات والسجل التوضيحي. هذا يشرح فائدة Prometheus وGrafana وLoki — ولا يدّعي تشغيل نظام المركز هنا.</p>
-    <div class="scenario-controls" id="scenarioControls" role="group" aria-label="Simulated system scenarios"><button type="button" data-signal="steady" class="active" aria-pressed="true" data-at="signalSteady">طبيعي</button><button type="button" data-signal="surge" aria-pressed="false" data-at="signalSurge">ضغط مرتفع</button><button type="button" data-signal="recover" aria-pressed="false" data-at="signalRecover">استعادة</button></div>
-    <div class="proof-lesson"><span class="proof-lesson-kicker" data-at="labLessonLabel">ماذا يثبت هذا القسم؟</span><p id="labLesson" data-at="labObserveLesson">أنني أفهم العلاقة بين المقاييس والسجلات ولوحات المتابعة، وليس أنه قياس حقيقي من جهة عمل.</p></div>
-    <a class="proof-case-link" href="#work" data-at="labCaseLink">اطلع على أعمالي الموثقة ↗</a>
-   </div>
-   <div class="proof-console" aria-label="Simulation visualization"><div class="console-header"><span class="console-dots"><i></i><i></i><i></i></span><span id="consoleLabel">OBSERVABILITY / SIMULATED SIGNAL</span><span class="console-live"><i></i> DEMO</span></div><div class="console-graph"><div class="graph-sheen"></div><svg viewBox="0 0 540 170" role="img" aria-label="Illustrative simulated monitoring line graph" preserveAspectRatio="none"><defs><linearGradient id="consoleFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c2a2fc" stop-opacity=".22"/><stop offset="1" stop-color="#c2a2fc" stop-opacity="0"/></linearGradient></defs><path class="console-area" id="consoleArea" d="M0 126L45 121 90 125 135 112 180 117 225 103 270 109 315 93 360 101 405 89 450 94 495 79 540 85L540 170 0 170Z" fill="url(#consoleFill)"/><path class="console-path" id="consolePath" d="M0 126L45 121 90 125 135 112 180 117 225 103 270 109 315 93 360 101 405 89 450 94 495 79 540 85"/></svg><span class="graph-watermark">DEMO / NO LIVE TELEMETRY</span></div>
-    <div class="console-metrics"><div><small data-at="metricSignal">حالة المؤشر</small><strong id="metricSignal">STEADY</strong></div><div><small data-at="metricAction">قراءة السجل</small><strong id="metricAction">NO ALERT</strong></div><div><small data-at="metricSource">نوع البيانات</small><strong id="metricSource">SIMULATED</strong></div></div>
-    <div class="console-terminal"><div class="terminal-head"><span>EVENT TRACE / EXAMPLE</span><span>●●●</span></div><div id="consoleLog" class="console-log" aria-live="polite">› metric received · stable trend<br>› dashboard updated · no alert<br>› logs available for context</div></div></div>
-  </div>
- </div>
- <div class="proof-lab-footnote"><span class="diamond-glyph" aria-hidden="true">◇</span><span data-at="evidenceDisclaimer">كل القيم والمخططات في التجربة توضيحية، ولا تمثل بيانات الأرصاد أو نتائج الاختبار على أنظمة إنتاجية.</span></div>
-</section>
-<section class="section container atlas-section" id="atlas" aria-labelledby="atlasTitle">
- <div class="section-head reveal"><div><span class="section-index">03 / WORK IN PROGRESS</span><h2 id="atlasTitle" data-i18n="atlasTitle">أرشيف الأفكار <em>والتجارب.</em></h2></div><p data-i18n="atlasIntro">ليس كل مشروع منتجًا جاهزًا. هنا أميز العمل المكتمل من النموذج البحثي والفكرة قيد الاستكشاف، بدون تضخيم للإنجازات.</p></div>
- <div class="atlas-controls"><div class="atlas-count"><span id="atlasCount">13</span><span data-i18n="atlasCountLabel">مشروعًا وتجربة وفكرة</span></div><div class="filter-buttons" role="group" aria-label="تصفية المشاريع"><button type="button" data-filter="all" class="is-active" aria-pressed="true" data-i18n="filterAll">الكل</button><button type="button" data-filter="complete" aria-pressed="false" data-i18n="filterDone">منجز</button><button type="button" data-filter="active" aria-pressed="false" data-i18n="filterActive">جارٍ</button><button type="button" data-filter="concept" aria-pressed="false" data-i18n="filterConcept">بحث / فكرة</button><button type="button" data-filter="paused" aria-pressed="false" data-i18n="filterPaused">متوقف</button></div></div>
- <div class="atlas-grid" id="atlasGrid" aria-live="polite"><noscript><p>تشغيل JavaScript مطلوب لعرض الأرشيف التفاعلي. يمكنك تصفح المشاريع المنشورة مباشرة على <a href="https://github.com/muathmalsulami">GitHub</a>.</p></noscript></div>
- <p class="atlas-footnote" data-i18n="atlasFootnote">الحالة تعكس آخر ما وثقته من أعمالي. لا تعني كلمة «بحث» أن النظام قد نُفذ أو اختُبر ميدانيًا.</p>
-</section>
-<section class="section method-section" id="approach" aria-labelledby="methodTitle">
- <div class="container"><div class="section-head reveal"><div><span class="section-index">04 / ENGINEERING LANGUAGE</span><h2 id="methodTitle" data-i18n="methodTitle">أبني. أربط. <em>أراقب.</em></h2></div><p data-i18n="methodIntro">ثلاث مراحل تعبّر عن أجزاء من تجربتي، وليست ادعاءً بأنني بنيت نظام إنتاج واحدًا يجمع كل مشاريعي.</p></div>
- <div class="method-shell reveal"><div class="method-side"><p class="method-side-label">INTERACTIVE / EXPLORE</p><div class="method-switch" role="tablist" aria-label="طريقة العمل"><button type="button" data-stage="build" role="tab" aria-selected="true" aria-controls="stageDescription" class="is-active"><span>01</span><b data-i18n="tabBuild">أبني</b><small>BUILD</small></button><button type="button" data-stage="integrate" role="tab" aria-selected="false" aria-controls="stageDescription"><span>02</span><b data-i18n="tabIntegrate">أربط</b><small>INTEGRATE</small></button><button type="button" data-stage="observe" role="tab" aria-selected="false" aria-controls="stageDescription"><span>03</span><b data-i18n="tabObserve">أراقب</b><small>OBSERVE</small></button></div><div class="method-copy" id="stageDescription" role="tabpanel" tabindex="0"><span id="stageLabel">BUILD / EXPERIENCE</span><h3 id="stageTitle">أبدأ بتجربة المستخدم</h3><p id="stageText">بناء واجهات عملية وتدفقات واضحة وربط عناصرها بما يحتاجه المستخدم.</p><div id="stageEvidence" class="method-evidence">Numoo · UI</div></div></div><div class="method-visual" aria-label="مخطط توضيحي للواجهة والتكامل والمراقبة"><svg viewBox="0 0 700 410" role="img" aria-label="مخطط بصري متحرك لمراحل بناء الواجهة وتكامل الوظائف ومراقبة البيانات"><defs><linearGradient id="methodGradient" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ffc79b"/><stop offset=".52" stop-color="#ba91ff"/><stop offset="1" stop-color="#80e0c8"/></linearGradient></defs><path class="method-path-base" d="M105 220C195 220 190 119 315 119S450 285 572 285"/><path class="method-path-active" id="methodActivePath" d="M105 220C195 220 190 119 315 119S450 285 572 285"/><g class="diagram-node is-active" data-node="build" transform="translate(105 220)"><circle r="53"/><rect x="-20" y="-14" width="40" height="28" rx="4"/><path d="M-20 -6h40m-30 12h19"/><text y="78">UI</text></g><g class="diagram-node" data-node="integrate" transform="translate(315 119)"><circle r="53"/><path d="m-14-12-14 12 14 12M14-12 28 0 14 12M7-18-8 18"/><text y="78">API</text></g><g class="diagram-node" data-node="observe" transform="translate(572 285)"><circle r="53"/><path d="M-28 14-9-5l14 13 12-21 12 9"/><text y="78">DATA</text></g><circle class="method-traveler" id="methodTraveler" r="7"><animateMotion dur="9s" repeatCount="indefinite" path="M105 220C195 220 190 119 315 119S450 285 572 285"/></circle></svg><div class="diagram-legend"><span>01 / INTERFACE</span><span>02 / INTEGRATION</span><span>03 / OBSERVABILITY</span></div><p data-i18n="methodDisclaimer">مخطط توضيحي، وليس بيانات تشغيل مباشرة.</p></div></div>
- </div>
-</section>
-<section class="section container skills-section" id="skills" aria-labelledby="skillsTitle">
- <div class="section-head reveal"><div><span class="section-index">05 / TOOLKIT & EVIDENCE</span><h2 id="skillsTitle" data-i18n="skillsTitle">كل أداة لها <em>صورة ودليل.</em></h2></div><p data-i18n="skillsIntro">مهارات مستخدمة في مشاريع أو تدريب، وأخرى ضمن الدراسة والاستكشاف. أعرضها بشكل مختلف بحسب قوة الدليل، وليس بنسب إتقان غير قابلة للقياس.</p></div>
- <div class="skills-group-label"><span data-i18n="skillsGroupOne">التطوير والتكامل</span><span>01 / DEVELOPMENT</span></div><div class="skills-grid" id="skillsDevelopment"></div><noscript><p>Python، Flask، HTML، CSS، JavaScript، REST APIs، SQL، UI/UX.</p></noscript>
- <div class="skills-group-label"><span data-i18n="skillsGroupTwo">المراقبة والبنية التشغيلية</span><span>02 / SYSTEMS</span></div><div class="skills-grid" id="skillsSystems"></div><noscript><p>Docker، Prometheus، Grafana، Loki، Linux، Git، GitHub، Observability.</p></noscript>
- <div class="skills-group-label"><span data-i18n="skillsGroupThree">الأدوات والمنهجيات والتجارب</span><span>03 / PRACTICE</span></div><div class="skills-grid" id="skillsPractice"></div><noscript><p>CI/CD (تعلم)، AI Integration، Computer Vision (بحث)، Documentation.</p></noscript>
- <p class="brand-note" data-brand-note>علامات الأدوات التجارية المعروضة للتعريف بالتقنيات فقط. رموز المهارات العامة ليست شعارات شركات. <a href="BRAND_ASSETS.md" aria-label="مصادر الشعارات والتراخيص">مصادر الشعارات واستخدامها ↗</a></p>
-</section>
-<section class="section container about-section" id="about" aria-labelledby="aboutTitle"><div class="about-layout"><div class="about-image reveal"><img src="assets/meeting.webp" width="570" height="740" alt="معاذ السلمي خلال اجتماع، يرتدي الثوب والغترة والنظارات" loading="lazy"><div class="about-image-label"><span>THE PERSON / NOT JUST THE PIXELS</span><span>↗</span></div></div><div class="about-story reveal"><span class="section-index">06 / BEYOND THE SCREEN</span><h2 id="aboutTitle" data-i18n="aboutTitle">التقنية تتطور، <em>والفضول مستمر.</em></h2><p data-i18n="aboutBody">أنا خريج الذكاء الاصطناعي من جامعة أم القرى، شغوف ببناء البرمجيات واستكشاف ما يجعل النظام مفيدًا وموثوقًا. ساهمت في واجهات مشروع Numoo وتكامل Flask، وخضت تدريبًا عمليًا في تقنيات مراقبة الأنظمة بالمركز الوطني للأرصاد. وأحوّل الأفكار البحثية إلى خطط وتجارب يمكن اختبارها بدل الاكتفاء بوصفها.</p><div class="about-facts"><div><strong>2026</strong><span data-i18n="factGrad">التخرج · مرتبة الشرف الثانية</span></div><div><strong>3.54/4</strong><span data-i18n="factGpa">المعدل الجامعي</span></div><div><strong>2025</strong><span data-i18n="factNcm">تدريب الأرصاد · أبريل–يوليو</span></div></div><div class="about-actions"><a href="professional-summary.html" class="button button-outline" data-i18n="viewSnapshot">الملخص المهني القابل للطباعة</a><a href="https://github.com/muathmalsulami" target="_blank" rel="noopener noreferrer" class="underlined-link">GitHub ↗</a></div></div></div></section>
-<section class="section container journey-section" id="journey" aria-labelledby="journeyTitle"><div class="section-head reveal"><div><span class="section-index">07 / THE JOURNEY</span><h2 id="journeyTitle" data-i18n="journeyTitle">رحلة واضحة، <em>بلا تواريخ مختلقة.</em></h2></div><p data-i18n="journeyIntro">التواريخ هنا تمثل محطات مثبتة أو مراحل مشروع، وليس سنوات خبرة وظيفية لم أكتسبها.</p></div><div class="journey-track" id="journeyTrack"></div><noscript><p>جامعة أم القرى 2022–2026 · تدريب المركز الوطني للأرصاد 2025 · مشروع Numoo 2026 · نشر مشروع Pathy 2026.</p></noscript></section>
-<section class="section container contact-section" id="contact" aria-labelledby="contactTitle"><div class="contact-panel reveal"><div class="contact-top"><span class="section-index">08 / WHAT COMES NEXT</span><span class="contact-star">✳</span></div><h2 id="contactTitle" data-i18n="contactTitle">الفصل القادم، <em>نكتبه معًا.</em></h2><p data-i18n="contactBody">مهتم بالتعاون في تطوير البرمجيات وتكامل الذكاء الاصطناعي، وأرحب بالفرص المهنية والنقاشات التي تحوّل الأفكار إلى أعمال قابلة للاختبار.</p><div class="contact-actions"><a href="https://www.linkedin.com/in/muath-m-alsulami/" target="_blank" rel="noopener noreferrer" class="button button-primary"><span data-i18n="contactLinkedin">تواصل معي عبر LinkedIn</span><span>↗</span></a><a href="https://github.com/muathmalsulami" target="_blank" rel="noopener noreferrer" class="button button-outline">GitHub ↗</a></div><div class="contact-baseline"><span>MUATH ALSULAMI / MAKKAH</span><span>REAL → PIXEL → PROOF</span></div></div></section>
-</main>
-<footer class="footer container"><div><span class="footer-symbol">M<span>.</span></span><span>© 2026 MUATH ALSULAMI</span></div><p data-i18n="footerText">المشاريع قيد التطوير مُعلَّمة بوضوح. الشعار النهائي قيد التصميم.</p><a href="#top" data-i18n="backToTop">العودة للأعلى ↑</a></footer>
-<dialog id="commandPalette" class="command-palette" aria-labelledby="commandTitle"><div class="command-shell"><div class="command-top"><span id="commandTitle" data-at="paletteTitle">QUICK ACCESS / التنقل السريع</span><button id="commandClose" type="button" aria-label="Close quick navigation">✕</button></div><label class="command-search-label" for="commandQuery"><span aria-hidden="true">⌕</span><input id="commandQuery" type="search" autocomplete="off" data-at-placeholder="palettePlaceholder" placeholder="ابحث عن قسم أو مشروع..." aria-label="Search pages and projects"><kbd>ESC</kbd></label><div class="command-results" id="commandResults" role="listbox" aria-label="Search results"></div><div class="command-footer"><span data-at="paletteHint">↑↓ للتنقل · Enter للفتح · Esc للإغلاق</span><span>MUATH / 09</span></div></div></dialog>
-<dialog id="projectDialog" class="project-dialog" aria-labelledby="modalTitle"><div class="modal-shell"><div class="modal-topline"><span>MUATH / CASE FILE</span><button type="button" class="dialog-close" id="dialogClose" aria-label="إغلاق">×</button></div><div class="modal-heading"><img id="modalImage" src="assets/project-art/portfolio.svg" alt="تمثيل بصري توضيحي للمشروع"><div><span id="modalStatus" class="project-state"></span><h2 id="modalTitle"></h2><p id="modalSummary"></p></div></div><div class="modal-content"><div><h3 data-i18n="modalRoleLabel">مساهمتي / الحالة</h3><p id="modalRole"></p></div><div><h3 data-i18n="modalOutcomeLabel">المخرجات والأدلة</h3><p id="modalOutcome"></p></div><div><h3 data-i18n="modalLimitLabel">ما الذي لم يثبت بعد؟</h3><p id="modalLimit"></p></div></div><div class="modal-links" id="modalLinks"></div></div></dialog>
-</body>
+
+    <header class="site-header" id="top">
+      <div class="header-inner container">
+        <a class="brand" href="#home" aria-label="MUATH home">
+          <span class="brand-symbol" aria-hidden="true"
+            ><svg viewBox="0 0 48 48" fill="none">
+              <path
+                d="M7 35 15 10l9 14 9-14 8 25"
+                stroke="currentColor"
+                stroke-width="5"
+                stroke-linejoin="round"
+              />
+              <rect
+                x="37"
+                y="6"
+                width="5"
+                height="5"
+                fill="currentColor"
+              /></svg
+          ></span>
+          <span class="brand-name"
+            ><b>MUATH</b
+            ><small data-i18n="brandArabic">معاذ السلمي</small></span
+          >
+        </a>
+        <nav
+          class="desktop-nav"
+          aria-label="التنقل الرئيسي"
+          data-i18n-label="navLabel"
+        >
+          <a href="#home" aria-current="location" data-i18n="navHome"
+            >الرئيسية</a
+          >
+          <a href="#work" data-i18n="navWork">الأعمال</a
+          ><a href="#evidence" data-at="navEvidence">المختبر</a>
+          <a href="#approach" data-i18n="navApproach">المنهج</a>
+          <a href="#skills" data-i18n="navSkills">المهارات</a>
+          <a href="#about" data-i18n="navAbout">عني</a>
+          <a href="#contact" data-i18n="navContact">تواصل</a>
+        </nav>
+        <div class="header-controls">
+          <button
+            class="language-switch"
+            type="button"
+            id="languageSwitch"
+            lang="en"
+            dir="ltr"
+          >
+            English
+          </button>
+          <button
+            class="icon-button command-launch"
+            id="commandLaunch"
+            aria-keyshortcuts="Control+K Meta+K"
+            type="button"
+            aria-label="فتح لوحة التنقل السريع"
+            title="Quick navigation (Ctrl+K)"
+          >
+            <span class="command-glyph" aria-hidden="true">⌕</span
+            ><span class="command-shortcut" aria-hidden="true">Ctrl K</span>
+          </button>
+          <button
+            class="icon-button theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="تغيير المظهر"
+            aria-pressed="false"
+            title="Toggle appearance"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.2 15.7a8.6 8.6 0 1 1-11.9-12A8.6 8.6 0 0 0 20.2 15.7Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="icon-button mobile-menu-button"
+            id="menuToggle"
+            type="button"
+            aria-label="فتح القائمة"
+            aria-controls="mobileNav"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav
+        class="mobile-nav"
+        id="mobileNav"
+        aria-label="التنقل على الجوال"
+        data-i18n-label="mobileNavLabel"
+        hidden
+      >
+        <a href="#home" data-i18n="navHome">الرئيسية</a
+        ><a href="#work" data-i18n="navWork">الأعمال</a
+        ><a href="#evidence" data-at="navEvidence">المختبر</a
+        ><a href="#approach" data-i18n="navApproach">المنهج</a
+        ><a href="#skills" data-i18n="navSkills">المهارات</a
+        ><a href="#about" data-i18n="navAbout">عني</a
+        ><a href="#contact" data-i18n="navContact">تواصل</a>
+      </nav>
+      <noscript
+        ><nav class="container static-nav" aria-label="روابط المحتوى">
+          <a href="#work">الأعمال</a><a href="#about">عني</a
+          ><a href="#journey">المحطات</a><a href="#contact">تواصل</a>
+        </nav></noscript
+      >
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="hero container" id="home" aria-labelledby="heroTitle">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow accent-eyebrow">
+              <span class="eyebrow-line"></span
+              ><span data-i18n="heroEyebrow">من مكة، إلى العالم الرقمي</span>
+            </p>
+            <h1 id="heroTitle">
+              <strong data-i18n="heroName">معاذ السلمي</strong>
+            </h1>
+            <div id="heroEnglish" class="hero-en" lang="en">
+              Muath Alsulami<span class="orange-dot">.</span>
+            </div>
+            <p id="heroArabic" class="hero-ar" lang="ar" dir="rtl" hidden>
+              معاذ السلمي
+            </p>
+            <p class="hero-role" data-i18n="heroRole">
+              تطوير البرمجيات · تكامل الذكاء الاصطناعي
+            </p>
+            <p class="hero-lead" data-i18n="heroLead">
+              أطوّر واجهات الويب وأربطها بنماذج الذكاء الاصطناعي. تعلّمت مراقبة
+              الأنظمة عمليًا خلال تدريبي في المركز الوطني للأرصاد.
+            </p>
+            <div class="hero-ctas">
+              <a href="#work" class="button button-primary"
+                ><span data-i18n="viewWork">استكشف أعمالي</span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-7-7 7 7-7 7" /></svg></a
+              ><a href="professional-summary.html" class="button button-outline"
+                ><span data-i18n="professionalSummary">ملخصي المهني</span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 4h8l4 4v12H7zM15 4v5h4M10 13h6m-6 4h5" /></svg
+              ></a>
+            </div>
+            <div class="hero-meta">
+              <span class="meta-location"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 22s7-7.5 7-13a7 7 0 1 0-14 0c0 5.5 7 13 7 13Z" />
+                  <circle cx="12" cy="9" r="2" /></svg
+                ><span data-i18n="location">مكة المكرمة، السعودية</span></span
+              ><span class="hero-meta-separator"></span
+              ><a
+                href="https://github.com/muathmalsulami"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub ↗</a
+              ><a
+                href="https://www.linkedin.com/in/muath-m-alsulami/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn ↗</a
+              >
+            </div>
+          </div>
+          <div
+            class="hero-scene"
+            id="heroScene"
+            data-view="pixel"
+            role="group"
+            data-i18n-label="sceneLabel"
+            aria-label="مشهد فني يجمع الصورة الحقيقية بنظارة الواقع الافتراضي وشخصية البكسل"
+          >
+            <div class="hero-sky" aria-hidden="true">
+              <img
+                src="assets/makkah-atmosphere.webp"
+                srcset="assets/makkah-atmosphere-720.webp 720w, assets/makkah-atmosphere.webp 1540w"
+                sizes="(max-width: 720px) 95vw, (max-width: 1440px) 54vw, 760px"
+                alt=""
+                width="1540"
+                height="867"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="hero-orb"></div>
+            <div class="hero-gridlines"></div>
+            <div class="scene-edition" aria-hidden="true">
+              MUATH / ATELIER <span>09</span>
+            </div>
+            <div class="hero-portrait">
+              <img
+                src="assets/vr-person.webp"
+                srcset="assets/vr-person-540.webp 540w, assets/vr-person.webp 995w"
+                sizes="(max-width: 720px) 73vw, (max-width: 1440px) 44vw, 630px"
+                data-i18n-alt="portraitAlt"
+                alt="معاذ يرتدي نظارة الواقع الافتراضي مع وحدات التحكم"
+                width="995"
+                height="891"
+              />
+            </div>
+            <div class="pixel-trail" aria-hidden="true"></div>
+            <div class="orbit-line" aria-hidden="true">
+              <svg viewBox="0 0 800 630" preserveAspectRatio="none">
+                <path d="M-24 454C74 305 201 335 294 386S531 453 699 209" />
+              </svg>
+            </div>
+            <div class="hero-pixel">
+              <img
+                src="assets/pixel-muath.webp"
+                srcset="assets/pixel-muath-540.webp 540w, assets/pixel-muath.webp 940w"
+                sizes="(max-width: 720px) 68vw, (max-width: 1440px) 40vw, 570px"
+                width="940"
+                height="627"
+                data-i18n-alt="pixelAlt"
+                alt="نسخة بكسل فنية لمعاذ يعمل على جهاز الحاسوب"
+                decoding="async"
+              />
+            </div>
+            <div
+              class="scene-switch"
+              role="group"
+              data-i18n-label="sceneControls"
+              aria-label="طبقات المشهد"
+            >
+              <button
+                type="button"
+                data-view="real"
+                aria-pressed="false"
+                lang="en"
+              >
+                Real
+              </button>
+              <button
+                type="button"
+                data-view="pixel"
+                class="is-active"
+                aria-pressed="true"
+                lang="en"
+              >
+                Pixel
+              </button>
+              <button
+                type="button"
+                data-view="proof"
+                aria-pressed="false"
+                lang="en"
+              >
+                Proof
+              </button>
+            </div>
+            <div class="scene-real" inert aria-hidden="true">
+              <strong data-i18n="realSceneTitle">مكة المكرمة</strong>
+              <a href="#about" data-i18n="realSceneLink">تعرّف عليّ ↗</a>
+            </div>
+            <div class="scene-proof" inert aria-hidden="true">
+              <strong data-at="sceneProofTitle">من الواجهة إلى النظام</strong>
+              <p data-at="sceneProofBody">
+                Numoo / UI + Flask integration · NCM / monitoring and logs
+              </p>
+              <a href="#work" data-at="sceneProofLink">الأعمال المختارة ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="proof-rail">
+          <div>
+            <span class="rail-symbol">✦</span>
+            <div>
+              <strong data-i18n="railOne">بكالوريوس الذكاء الاصطناعي</strong
+              ><small data-i18n="railOneSub"
+                >جامعة أم القرى · 2026 · 3.54/4</small
+              >
+            </div>
+          </div>
+          <div>
+            <span class="rail-symbol">⌘</span>
+            <div>
+              <strong data-i18n="railTwo">تجربة عملية في المراقبة</strong
+              ><small data-i18n="railTwoSub"
+                >المركز الوطني للأرصاد · 2025</small
+              >
+            </div>
+          </div>
+          <div>
+            <span class="rail-symbol">◇</span>
+            <div>
+              <strong data-i18n="railThree">مشاريع وتكامل برمجي</strong
+              ><small data-i18n="railThreeSub">Numoo · Flask · GitHub</small>
+            </div>
+          </div>
+          <a
+            href="#journey"
+            class="rail-link"
+            data-i18n-label="journeyLabel"
+            aria-label="المحطات المهنية"
+            >↗</a
+          >
+        </div>
+      </section>
+      <section
+        class="section container featured-section"
+        id="work"
+        aria-labelledby="featuredTitle"
+      >
+        <div class="section-head reveal">
+          <div>
+            <h2 id="featuredTitle" data-i18n="featuredTitle">أعمال مختارة</h2>
+          </div>
+          <p data-i18n="featuredIntro">
+            مشروع تخرج جماعي، وتدريب في مراقبة الأنظمة، وموقع تعليمي منشور.
+          </p>
+        </div>
+        <div class="featured-grid">
+          <article
+            class="feature-card feature-primary reveal"
+            aria-labelledby="numoo-heading"
+          >
+            <div class="feature-visual numoo-visual">
+              <img
+                data-i18n-alt="numooAlt"
+                src="assets/project-art/numoo.svg"
+                alt="رسم توضيحي مفاهيمي لواجهة Numoo وليس لقطة من النظام الفعلي"
+                loading="lazy"
+              /><span class="visual-disclaimer" data-i18n="visualConcept"
+                >تمثيل بصري توضيحي</span
+              >
+            </div>
+            <div class="feature-content">
+              <div class="feature-topline">
+                <span class="feature-status"
+                  ><span></span
+                  ><span data-i18n="statusCompleted">مكتمل</span></span
+                >
+              </div>
+              <h3 id="numoo-heading" lang="en">Numoo</h3>
+              <p data-i18n="numooFeatured">
+                مشروع تخرج جماعي للتنبؤ باتجاه الأسهم. دوري: تطوير الواجهات
+                وربطها عبر Flask بنماذج طوّرها الفريق.
+              </p>
+              <div class="feature-tags">
+                <span>UI / UX</span><span>Flask</span><span>Integration</span>
+              </div>
+              <button type="button" class="feature-link" data-project="numoo">
+                <span data-i18n="openCase">افتح دراسة الحالة</span
+                ><span>↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="feature-card feature-side reveal">
+            <div class="feature-visual">
+              <img
+                data-i18n-alt="ncmAlt"
+                src="assets/project-art/ncm.svg"
+                alt="رسم توضيحي لمفاهيم المراقبة وليس بيانات حقيقية"
+                loading="lazy"
+              /><span class="visual-disclaimer" data-i18n="visualConcept"
+                >تمثيل بصري توضيحي</span
+              >
+            </div>
+            <div class="feature-content">
+              <div class="feature-topline">
+                <span class="feature-status"
+                  ><span></span
+                  ><span data-i18n="statusCompleted">مكتمل</span></span
+                >
+              </div>
+              <h3 data-i18n="ncmTitle">مراقبة الأنظمة</h3>
+              <p data-i18n="ncmFeatured">
+                أعمال تدريبية داخل تقنية المعلومات باستخدام Docker وPrometheus
+                وGrafana وLoki.
+              </p>
+              <button type="button" class="feature-link" data-project="ncm">
+                <span data-i18n="openCase">افتح دراسة الحالة</span
+                ><span>↗</span>
+              </button>
+            </div>
+          </article>
+          <article class="feature-card feature-side reveal">
+            <div class="feature-visual">
+              <img
+                data-i18n-alt="pathyAlt"
+                src="assets/project-art/pathy.svg"
+                alt="تصميم بياني يرمز لفروع Git وتطوير موقع منشور"
+                loading="lazy"
+              /><span class="visual-disclaimer" data-i18n="visualConcept"
+                >تمثيل بصري توضيحي</span
+              >
+            </div>
+            <div class="feature-content">
+              <div class="feature-topline">
+                <span class="feature-status"
+                  ><span></span
+                  ><span data-i18n="statusPublished">منشور</span></span
+                >
+              </div>
+              <h3>Git × Pathy</h3>
+              <p data-i18n="pathyFeatured">
+                موقع تعليمي منشور على GitHub Pages مع اهتمام بالتجاوب والأداء
+                وإمكانية الوصول.
+              </p>
+              <button type="button" class="feature-link" data-project="pathy">
+                <span data-i18n="openCase">افتح دراسة الحالة</span
+                ><span>↗</span>
+              </button>
+            </div>
+          </article>
+        </div>
+        <p>
+          <a href="#atlas" class="atlas-jump" data-i18n="atlasLink"
+            >استكشف أطلس المشاريع ↗</a
+          >
+        </p>
+      </section>
+      <noscript
+        ><p class="container">
+          <a href="https://github.com/muathmalsulami/learn-git-with-pathy"
+            >مستودع Git × Pathy ↗</a
+          >
+        </p></noscript
+      >
+      <section
+        class="section container evidence-section"
+        id="evidence"
+        aria-labelledby="evidenceTitle"
+      >
+        <div class="section-head reveal">
+          <div>
+            <h2 id="evidenceTitle" data-at-html="evidenceTitle">
+              التقنية لا تُشرح فقط. <em>جرّب الفكرة.</em>
+            </h2>
+          </div>
+          <p data-at="evidenceIntro">
+            تجربتان توضيحيتان تفاعليتان: مسار تكامل التطبيق، وكيف تساعد المراقبة
+            على فهم النظام. ليست بيانات حقيقية من الأرصاد أو نتائج Numoo.
+          </p>
+        </div>
+        <div
+          class="proof-lab reveal"
+          id="proofLab"
+          data-lab="observe"
+          data-signal="steady"
+        >
+          <div class="proof-lab-head">
+            <div class="proof-heading">
+              <strong data-at="proofHeadline">داخل النظام</strong>
+            </div>
+            <div
+              class="proof-lab-tabs"
+              role="tablist"
+              aria-label="تجارب المختبر"
+              data-i18n-label="labTabs"
+            >
+              <button
+                type="button"
+                data-lab-mode="observe"
+                id="lab-observe"
+                role="tab"
+                aria-controls="labPanel"
+                data-at="labTabObserve"
+                aria-selected="true"
+                class="active"
+              >
+                المراقبة</button
+              ><button
+                type="button"
+                data-lab-mode="integrate"
+                id="lab-integrate"
+                role="tab"
+                aria-controls="labPanel"
+                data-at="labTabIntegrate"
+                aria-selected="false"
+              >
+                التكامل
+              </button>
+            </div>
+          </div>
+          <div
+            class="proof-lab-body"
+            id="labPanel"
+            role="tabpanel"
+            aria-labelledby="lab-observe"
+            tabindex="0"
+          >
+            <div class="proof-lab-story">
+              <div class="proof-indicator">
+                <span></span
+                ><span data-at="labSimBadge"
+                  >EXPLANATORY SIMULATION / NOT LIVE DATA</span
+                >
+              </div>
+              <h3 id="labTitle" data-at="labObserveTitle">
+                ماذا لو تغيرت حالة النظام؟
+              </h3>
+              <p id="labDescription" data-at="labObserveDesc">
+                بدل رسم بياني ثابت، غيّر السيناريو وشاهد كيف تتبدل الإشارات
+                والسجل التوضيحي. هذا يشرح فائدة Prometheus وGrafana وLoki — ولا
+                يدّعي تشغيل نظام المركز هنا.
+              </p>
+              <div
+                class="scenario-controls"
+                id="scenarioControls"
+                role="group"
+                aria-label="Simulated system scenarios"
+              >
+                <button
+                  type="button"
+                  data-signal="steady"
+                  class="active"
+                  aria-pressed="true"
+                  data-at="signalSteady"
+                >
+                  طبيعي</button
+                ><button
+                  type="button"
+                  data-signal="surge"
+                  aria-pressed="false"
+                  data-at="signalSurge"
+                >
+                  ضغط مرتفع</button
+                ><button
+                  type="button"
+                  data-signal="recover"
+                  aria-pressed="false"
+                  data-at="signalRecover"
+                >
+                  استعادة
+                </button>
+              </div>
+              <div class="proof-lesson">
+                <span class="proof-lesson-kicker" data-at="labLessonLabel"
+                  >ماذا يثبت هذا القسم؟</span
+                >
+                <p id="labLesson" data-at="labObserveLesson">
+                  أنني أفهم العلاقة بين المقاييس والسجلات ولوحات المتابعة، وليس
+                  أنه قياس حقيقي من جهة عمل.
+                </p>
+              </div>
+              <a class="proof-case-link" href="#work" data-at="labCaseLink"
+                >اطلع على أعمالي الموثقة ↗</a
+              >
+            </div>
+            <div class="proof-console" aria-label="Simulation visualization">
+              <div class="console-header">
+                <span class="console-dots"><i></i><i></i><i></i></span
+                ><span id="consoleLabel">OBSERVABILITY / SIMULATED SIGNAL</span
+                ><span class="console-live"><i></i> DEMO</span>
+              </div>
+              <div class="console-graph">
+                <div class="graph-sheen"></div>
+                <svg
+                  viewBox="0 0 540 170"
+                  role="img"
+                  aria-label="Illustrative simulated monitoring line graph"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient
+                      id="consoleFill"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="1"
+                    >
+                      <stop
+                        offset="0"
+                        stop-color="#c2a2fc"
+                        stop-opacity=".22"
+                      />
+                      <stop offset="1" stop-color="#c2a2fc" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    class="console-area"
+                    id="consoleArea"
+                    d="M0 126L45 121 90 125 135 112 180 117 225 103 270 109 315 93 360 101 405 89 450 94 495 79 540 85L540 170 0 170Z"
+                    fill="url(#consoleFill)"
+                  />
+                  <path
+                    class="console-path"
+                    id="consolePath"
+                    d="M0 126L45 121 90 125 135 112 180 117 225 103 270 109 315 93 360 101 405 89 450 94 495 79 540 85"
+                  /></svg
+                ><span class="graph-watermark">DEMO / NO LIVE TELEMETRY</span>
+              </div>
+              <div class="console-metrics">
+                <div>
+                  <small data-at="metricSignal">حالة المؤشر</small
+                  ><strong id="metricSignal">STEADY</strong>
+                </div>
+                <div>
+                  <small data-at="metricAction">قراءة السجل</small
+                  ><strong id="metricAction">NO ALERT</strong>
+                </div>
+                <div>
+                  <small data-at="metricSource">نوع البيانات</small
+                  ><strong id="metricSource">SIMULATED</strong>
+                </div>
+              </div>
+              <div class="console-terminal">
+                <div class="terminal-head">
+                  <span>EVENT TRACE / EXAMPLE</span><span>●●●</span>
+                </div>
+                <div id="consoleLog" class="console-log" aria-live="polite">
+                  › metric received · stable trend<br />› dashboard updated · no
+                  alert<br />› logs available for context
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-lab-footnote">
+          <span class="diamond-glyph" aria-hidden="true">◇</span
+          ><span data-at="evidenceDisclaimer"
+            >كل القيم والمخططات في التجربة توضيحية، ولا تمثل بيانات الأرصاد أو
+            نتائج الاختبار على أنظمة إنتاجية.</span
+          >
+        </div>
+      </section>
+      <section
+        class="section method-section"
+        id="approach"
+        aria-labelledby="methodTitle"
+      >
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <h2 id="methodTitle" data-i18n="methodTitle">
+                أبني. أربط. <em>أراقب.</em>
+              </h2>
+            </div>
+            <p data-i18n="methodIntro">
+              كيف أتعامل مع الواجهات والتكامل والمراقبة عبر مشاريعي.
+            </p>
+          </div>
+          <div class="method-shell reveal">
+            <div class="method-side">
+              <div
+                class="method-switch"
+                role="tablist"
+                aria-label="طريقة العمل"
+                data-i18n-label="tabGroup"
+              >
+                <button
+                  type="button"
+                  data-stage="build"
+                  id="stage-build"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="stageDescription"
+                  class="is-active"
+                >
+                  <b data-i18n="tabBuild">أبني</b></button
+                ><button
+                  type="button"
+                  data-stage="integrate"
+                  id="stage-integrate"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="stageDescription"
+                >
+                  <b data-i18n="tabIntegrate">أربط</b></button
+                ><button
+                  type="button"
+                  data-stage="observe"
+                  id="stage-observe"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="stageDescription"
+                >
+                  <b data-i18n="tabObserve">أراقب</b>
+                </button>
+              </div>
+              <div
+                class="method-copy"
+                id="stageDescription"
+                role="tabpanel"
+                tabindex="0"
+              >
+                <span id="stageLabel">BUILD / EXPERIENCE</span>
+                <h3 id="stageTitle">أبدأ بتجربة المستخدم</h3>
+                <p id="stageText">
+                  بناء واجهات عملية وتدفقات واضحة وربط عناصرها بما يحتاجه
+                  المستخدم.
+                </p>
+                <div id="stageEvidence" class="method-evidence">Numoo · UI</div>
+              </div>
+            </div>
+            <div
+              class="method-visual"
+              aria-label="مخطط توضيحي للواجهة والتكامل والمراقبة"
+            >
+              <svg
+                viewBox="0 0 700 410"
+                role="img"
+                aria-label="مخطط بصري لمراحل بناء الواجهة وتكامل الوظائف ومراقبة البيانات"
+              >
+                <defs>
+                  <linearGradient
+                    id="methodGradient"
+                    x1="0"
+                    y1="0"
+                    x2="1"
+                    y2="0"
+                  >
+                    <stop stop-color="#ffc79b" />
+                    <stop offset=".52" stop-color="#ba91ff" />
+                    <stop offset="1" stop-color="#80e0c8" />
+                  </linearGradient>
+                </defs>
+                <path
+                  class="method-path-base"
+                  d="M105 220C195 220 190 119 315 119S450 285 572 285"
+                />
+                <path
+                  class="method-path-active"
+                  id="methodActivePath"
+                  d="M105 220C195 220 190 119 315 119S450 285 572 285"
+                />
+                <g
+                  class="diagram-node is-active"
+                  data-node="build"
+                  transform="translate(105 220)"
+                >
+                  <circle r="53" />
+                  <rect x="-20" y="-14" width="40" height="28" rx="4" />
+                  <path d="M-20 -6h40m-30 12h19" />
+                  <text y="78">UI</text>
+                </g>
+                <g
+                  class="diagram-node"
+                  data-node="integrate"
+                  transform="translate(315 119)"
+                >
+                  <circle r="53" />
+                  <path d="m-14-12-14 12 14 12M14-12 28 0 14 12M7-18-8 18" />
+                  <text y="78">API</text>
+                </g>
+                <g
+                  class="diagram-node"
+                  data-node="observe"
+                  transform="translate(572 285)"
+                >
+                  <circle r="53" />
+                  <path d="M-28 14-9-5l14 13 12-21 12 9" />
+                  <text y="78">DATA</text>
+                </g>
+              </svg>
+              <p data-i18n="methodDisclaimer">
+                مخطط توضيحي، وليس بيانات تشغيل مباشرة.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section container skills-section"
+        id="skills"
+        aria-labelledby="skillsTitle"
+      >
+        <div class="section-head reveal">
+          <div>
+            <h2 id="skillsTitle" data-i18n="skillsTitle">
+              كل أداة لها <em>صورة ودليل.</em>
+            </h2>
+          </div>
+          <p data-i18n="skillsIntro">
+            مهارات مستخدمة في مشاريع أو تدريب، وأخرى ضمن الدراسة والاستكشاف.
+            أعرضها بشكل مختلف بحسب قوة الدليل، وليس بنسب إتقان غير قابلة للقياس.
+          </p>
+        </div>
+        <div class="skills-group-label">
+          <span data-i18n="skillsGroupOne">التطوير والتكامل</span
+          ><span>01 / DEVELOPMENT</span>
+        </div>
+        <div class="skills-grid" id="skillsDevelopment"></div>
+        <noscript
+          ><p>
+            Python، Flask، HTML، CSS، JavaScript، REST APIs، SQL، UI/UX.
+          </p></noscript
+        >
+        <div class="skills-group-label">
+          <span data-i18n="skillsGroupTwo">المراقبة والبنية التشغيلية</span
+          ><span>02 / SYSTEMS</span>
+        </div>
+        <div class="skills-grid" id="skillsSystems"></div>
+        <noscript
+          ><p>
+            Docker، Prometheus، Grafana، Loki، Linux، Git، GitHub،
+            Observability.
+          </p></noscript
+        >
+        <div class="skills-group-label">
+          <span data-i18n="skillsGroupThree">الأدوات والمنهجيات والتجارب</span
+          ><span>03 / PRACTICE</span>
+        </div>
+        <div class="skills-grid" id="skillsPractice"></div>
+        <noscript
+          ><p>
+            CI/CD (تعلم)، AI Integration، Computer Vision (بحث)، Documentation.
+          </p></noscript
+        >
+        <p class="brand-note" data-brand-note>
+          <span data-i18n="brandNote">تعرّف الشعارات بالأدوات التقنية. المهارات العامة لها رسوم توضيحية.</span>
+          <a href="BRAND_ASSETS.md" data-i18n="brandSources"
+            >المصادر والتراخيص ↗</a
+          >
+        </p>
+      </section>
+      <section
+        class="section container about-section"
+        id="about"
+        aria-labelledby="aboutTitle"
+      >
+        <div class="about-layout">
+          <div class="about-image reveal">
+            <img
+              data-i18n-alt="meetingAlt"
+              src="assets/meeting.webp"
+              width="570"
+              height="740"
+              alt="معاذ السلمي خلال اجتماع، يرتدي الثوب والغترة والنظارات"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-story reveal">
+            <h2 id="aboutTitle" data-i18n="aboutTitle">
+              من مكة إلى تطوير البرمجيات
+            </h2>
+            <p data-i18n="aboutBody">
+              أنا خريج الذكاء الاصطناعي من جامعة أم القرى، شغوف ببناء البرمجيات
+              واستكشاف ما يجعل النظام مفيدًا وموثوقًا. ساهمت في واجهات مشروع
+              Numoo وتكامل Flask، وخضت تدريبًا عمليًا في تقنيات مراقبة الأنظمة
+              بالمركز الوطني للأرصاد. وأحوّل الأفكار البحثية إلى خطط وتجارب يمكن
+              اختبارها بدل الاكتفاء بوصفها.
+            </p>
+            <div class="about-facts">
+              <div>
+                <strong>2026</strong
+                ><span data-i18n="factGrad">التخرج · مرتبة الشرف الثانية</span>
+              </div>
+              <div>
+                <strong>3.54/4</strong
+                ><span data-i18n="factGpa">المعدل الجامعي</span>
+              </div>
+              <div>
+                <strong>2025</strong
+                ><span data-i18n="factNcm">تدريب الأرصاد · أبريل–يوليو</span>
+              </div>
+            </div>
+            <div class="about-actions">
+              <a
+                href="professional-summary.html"
+                class="button button-outline"
+                data-i18n="viewSnapshot"
+                >الملخص المهني القابل للطباعة</a
+              ><a
+                href="https://github.com/muathmalsulami"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underlined-link"
+                >GitHub ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section container journey-section"
+        id="journey"
+        aria-labelledby="journeyTitle"
+      >
+        <div class="section-head reveal">
+          <div>
+            <h2 id="journeyTitle" data-i18n="journeyTitle">
+              الدراسة والتدريب والمشاريع
+            </h2>
+          </div>
+          <p data-i18n="journeyIntro">
+            محطات من جامعة أم القرى إلى المشاريع والتجارب الحالية.
+          </p>
+        </div>
+        <div class="journey-track" id="journeyTrack"></div>
+        <noscript
+          ><p>
+            جامعة أم القرى 2022–2026 · تدريب المركز الوطني للأرصاد 2025 · مشروع
+            Numoo 2026 · نشر مشروع Pathy 2026.
+          </p></noscript
+        >
+      </section>
+      <section
+        class="section container atlas-section"
+        id="atlas"
+        aria-labelledby="atlasTitle"
+      >
+        <div class="section-head reveal">
+          <div>
+            <h2 id="atlasTitle" data-i18n="atlasTitle">أطلس المشاريع</h2>
+          </div>
+          <p data-i18n="atlasIntro">
+            تجارب ومشاريع قيد التطوير وأبحاث في مراحلها الأولى.
+          </p>
+        </div>
+        <div class="atlas-controls">
+          <div class="atlas-count">
+            <span id="atlasCount">13</span
+            ><span data-i18n="atlasCountLabel">مشروعًا وتجربة وفكرة</span>
+          </div>
+          <div class="filter-buttons" role="group" aria-label="تصفية المشاريع">
+            <button
+              type="button"
+              data-filter="all"
+              class="is-active"
+              aria-pressed="true"
+              data-i18n="filterAll"
+            >
+              الكل</button
+            ><button
+              type="button"
+              data-filter="active"
+              aria-pressed="false"
+              data-i18n="filterActive"
+            >
+              جارٍ</button
+            ><button
+              type="button"
+              data-filter="concept"
+              aria-pressed="false"
+              data-i18n="filterConcept"
+            >
+              بحث / فكرة</button
+            ><button
+              type="button"
+              data-filter="paused"
+              aria-pressed="false"
+              data-i18n="filterPaused"
+            >
+              متوقف
+            </button>
+          </div>
+        </div>
+        <div class="atlas-grid" id="atlasGrid" aria-live="polite">
+          <noscript
+            ><p>
+              تشغيل JavaScript مطلوب لعرض الأرشيف التفاعلي. يمكنك تصفح المشاريع
+              المنشورة مباشرة على
+              <a href="https://github.com/muathmalsulami">GitHub</a>.
+            </p></noscript
+          >
+        </div>
+        <p class="atlas-footnote" data-i18n="atlasFootnote">
+          الحالة تعكس آخر ما وثقته من أعمالي. لا تعني كلمة «بحث» أن النظام قد
+          نُفذ أو اختُبر ميدانيًا.
+        </p>
+      </section>
+      <section
+        class="section container contact-section"
+        id="contact"
+        aria-labelledby="contactTitle"
+      >
+        <div class="contact-panel reveal">
+          <h2 id="contactTitle" data-i18n="contactTitle">لنتواصل</h2>
+          <p data-i18n="contactBody">
+            مهتم بالتعاون في تطوير البرمجيات وتكامل الذكاء الاصطناعي، وأرحب
+            بالفرص المهنية والنقاشات التي تحوّل الأفكار إلى أعمال قابلة
+            للاختبار.
+          </p>
+          <div class="contact-actions">
+            <a
+              href="https://www.linkedin.com/in/muath-m-alsulami/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-primary"
+              ><span data-i18n="contactLinkedin">تواصل معي عبر LinkedIn</span
+              ><span>↗</span></a
+            ><a
+              href="https://github.com/muathmalsulami"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-outline"
+              >GitHub ↗</a
+            >
+          </div>
+          <div class="contact-baseline">
+            <span>MUATH ALSULAMI / MAKKAH</span
+            ><span>REAL → PIXEL → PROOF</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer container">
+      <div>
+        <span class="footer-symbol">M<span>.</span></span
+        ><span>© 2026 MUATH ALSULAMI</span>
+      </div>
+      <a href="#top" data-i18n="backToTop">العودة للأعلى ↑</a>
+    </footer>
+    <dialog
+      id="commandPalette"
+      class="command-palette"
+      aria-labelledby="commandTitle"
+    >
+      <div class="command-shell">
+        <div class="command-top">
+          <span id="commandTitle" data-at="paletteTitle"
+            >QUICK ACCESS / التنقل السريع</span
+          ><button
+            id="commandClose"
+            type="button"
+            aria-label="Close quick navigation"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="command-search-label">
+          <span aria-hidden="true">⌕</span
+          ><input
+            id="commandQuery"
+            type="search"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-controls="commandResults"
+            aria-expanded="false"
+            autocomplete="off"
+            data-at-placeholder="palettePlaceholder"
+            placeholder="ابحث عن قسم أو مشروع..."
+            aria-label="Search pages and projects"
+          /><kbd aria-hidden="true">ESC</kbd>
+        </div>
+        <div
+          class="command-results"
+          id="commandResults"
+          role="listbox"
+          aria-label="نتائج البحث"
+          data-i18n-label="searchResults"
+        ></div>
+        <p class="command-status" id="commandStatus" role="status"></p>
+        <div class="command-footer">
+          <span data-at="paletteHint"
+            >↑↓ للتنقل · Enter للفتح · Esc للإغلاق</span
+          >
+        </div>
+      </div>
+    </dialog>
+    <dialog
+      id="projectDialog"
+      class="project-dialog"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-shell">
+        <div class="modal-topline">
+          <span data-i18n="case">دراسة المشروع</span
+          ><button
+            type="button"
+            autofocus
+            class="dialog-close"
+            id="dialogClose"
+            aria-label="إغلاق"
+          >
+            ×
+          </button>
+        </div>
+        <div class="modal-heading">
+          <img
+            id="modalImage"
+            src="assets/project-art/portfolio.svg"
+            alt="تمثيل بصري توضيحي للمشروع"
+          />
+          <div>
+            <span id="modalStatus" class="project-state"></span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalSummary"></p>
+          </div>
+        </div>
+        <div class="modal-content">
+          <div id="modalObjectiveBlock">
+            <h3 data-i18n="modalObjectiveLabel">المشكلة والهدف</h3>
+            <p id="modalObjective"></p>
+          </div>
+          <div>
+            <h3 data-i18n="modalRoleLabel">مساهمتي / الحالة</h3>
+            <p id="modalRole"></p>
+          </div>
+          <div>
+            <h3 data-i18n="modalOutcomeLabel">المخرجات والأدلة</h3>
+            <p id="modalOutcome"></p>
+          </div>
+          <div>
+            <h3 data-i18n="modalLimitLabel">ما الذي لم يثبت بعد؟</h3>
+            <p id="modalLimit"></p>
+          </div>
+          <div id="modalNextBlock">
+            <h3 data-i18n="modalNextLabel">خطوة تالية ممكنة</h3>
+            <p id="modalNext"></p>
+          </div>
+        </div>
+        <div class="modal-links" id="modalLinks"></div>
+      </div>
+    </dialog>
+  </body>
 </html>

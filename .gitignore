@@ -1,0 +1,6 @@
+dist/
+_site/
+__pycache__/
+.playwright-cli/
+.DS_Store
+Thumbs.db
