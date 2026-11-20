@@ -519,6 +519,7 @@
     if (dialog.open) dialog.close();
   }
   function updateTranslations() {
+    renderTrace();
     const l = lex[language()];
     $("#commandQuery")?.setAttribute(
       "aria-label",
@@ -548,7 +549,47 @@
     setDemo(modeState.mode, modeState.signal);
     if ($("#commandPalette")?.open) renderCommands($("#commandQuery").value);
   }
+  const traceSteps = [
+    {
+      wire: "UI  →  Flask  →  UI",
+      ar: ["تتبّع طلبًا بأسعار افتراضية وشاهد ما تعيده الواجهة.", "جرّب التكامل"],
+      en: ["Follow one request with fictional prices through to the interface.", "Try the integration"],
+    },
+    {
+      wire: 'input = [100, 102, 101]',
+      ar: ["١ من ٣ · الواجهة التي بنيتها تجمع المدخلات. نستخدم هنا ثلاثة أسعار افتراضية.", "أرسل إلى Flask"],
+      en: ["1 of 3 · The interface I built collects the input. This example uses three fictional prices.", "Send to Flask"],
+    },
+    {
+      wire: 'request = { "prices": [100, 102, 101] }',
+      ar: ["٢ من ٣ · دوري في التكامل هو تمرير مدخلات الواجهة إلى نموذج الفريق عبر Flask.", "اعرض النتيجة"],
+      en: ["2 of 3 · My integration work connects the interface inputs to the team’s model through Flask.", "Show the result"],
+    },
+    {
+      wire: 'response = { "direction": "up" }',
+      ar: ["٣ من ٣ · تعرض الواجهة «صعود». هذه استجابة ثابتة للمثال. نماذج المشروع طوّرها زملائي.", "أعد التجربة"],
+      en: ["3 of 3 · The interface displays “up”. This sample response is fixed. My teammates developed the project models.", "Replay"],
+    },
+  ];
+  let traceStep = 0;
+  function renderTrace() {
+    const trace = $("#numoo-trace");
+    const step = traceSteps[traceStep];
+    const [description, action] = step[language()];
+    $("#traceWire").textContent = step.wire;
+    $("#traceStatus").textContent = description;
+    $("#traceNext").textContent = action;
+    $$("li", trace).forEach((row, index) => {
+      if (index + 1 === traceStep) row.setAttribute("aria-current", "step");
+      else row.removeAttribute("aria-current");
+    });
+  }
   function init() {
+    $(".trace-console").hidden = false;
+    $("#traceNext").addEventListener("click", () => {
+      traceStep = traceStep === 3 ? 1 : traceStep + 1;
+      renderTrace();
+    });
     document.addEventListener("portfolio:lab", (event) =>
       setDemo(event.detail, "steady"),
     );

@@ -5,6 +5,7 @@ async page => {
  await page.setViewportSize({width:1440,height:950});
  await page.goto(url);
  const scene=page.locator('#heroScene');
+ await scene.locator('[data-view=pixel]').click();
  await scene.locator('[data-view=real]').click();
  check(await scene.locator('.scene-portrait-real').isVisible(),'Real photo not visible');
  check(await scene.locator('.scene-fragment').count() > 0,'Pixel transition missing');

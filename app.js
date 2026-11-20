@@ -13,13 +13,13 @@ const translations = {
     numooContext: "مشروع تخرج جماعي · 2026",
     ncmContext: "تدريب تعاوني · 2025",
     pathyContext: "موقع منشور · 2026",
-    flowCaption: "مسار التكامل · رسم توضيحي",
+    flowCaption: "جرّب التكامل · محاكاة تعليمية",
     flowLabel: "مسار التكامل",
     flowInterface: "واجهة التطبيق",
-    flowInput: "استقبال المدخلات",
-    flowService: "ربط الطلب بالمخرجات",
+    flowInput: "تجهيز مثال للطلب",
+    flowService: "تمرير المدخلات إلى النموذج",
     flowModel: "نماذج الفريق",
-    flowOutput: "إعادة النتيجة للعرض",
+    flowOutput: "إرجاع نتيجة للواجهة",
     caseDemo: "جرّب الشرح التفاعلي ↗",
     copyCase: "نسخ رابط الدراسة",
     caseCopied: "تم نسخ رابط الدراسة.",
@@ -32,7 +32,7 @@ const translations = {
     mobileNavLabel: "التنقل على الجوال",
     skipLink: "تجاوز إلى المحتوى",
     journeyLabel: "المحطات المهنية",
-    sceneLabel: "صورة معاذ بنظارة الواقع الافتراضي وشخصيته البكسلية",
+    sceneLabel: "صور معاذ ومشاهد من أعماله",
     sceneControls: "طبقات المشهد",
     realSceneTitle: "مكة المكرمة",
     realSceneLink: "تعرّف عليّ ↗",
@@ -55,12 +55,11 @@ const translations = {
     navSkills: "المهارات",
     navAbout: "عني",
     navContact: "تواصل",
-    heroEyebrow: "من مكة، إلى العالم الرقمي",
+    heroEyebrow: "مكة المكرمة",
     heroName: "معاذ السلمي",
-    heroRole: "تطوير البرمجيات · تكامل الذكاء الاصطناعي",
-    heroLead:
-      "أطوّر واجهات الويب وأربطها بنماذج الذكاء الاصطناعي. تعلّمت مراقبة الأنظمة عمليًا خلال تدريبي في المركز الوطني للأرصاد.",
-    viewWork: "استكشف أعمالي",
+    heroRole: "أبني واجهات ويب وأربطها بنماذج الذكاء الاصطناعي.",
+    heroLead: "في مشروع نمو، بنيت الواجهة التي تصل بين المستخدم ونماذج التنبؤ التي طوّرها زملائي.",
+    viewWork: "شاهد كيف بنيت نمو",
     professionalSummary: "ملخصي المهني",
     location: "مكة المكرمة، السعودية",
     railOne: "بكالوريوس الذكاء الاصطناعي",
@@ -143,13 +142,13 @@ const translations = {
     numooContext: "Team capstone · 2026",
     ncmContext: "Co-op internship · 2025",
     pathyContext: "Published website · 2026",
-    flowCaption: "Integration flow · Illustration",
+    flowCaption: "Try the integration · Educational simulation",
     flowLabel: "Integration flow",
     flowInterface: "Web interface",
-    flowInput: "Collect input",
-    flowService: "Connect the request to model output",
+    flowInput: "Prepare a sample request",
+    flowService: "Pass the input to the model",
     flowModel: "Team models",
-    flowOutput: "Return a result to display",
+    flowOutput: "Return a result to the interface",
     caseDemo: "Try the interactive demo ↗",
     copyCase: "Copy case link",
     caseCopied: "Case link copied.",
@@ -162,7 +161,7 @@ const translations = {
     mobileNavLabel: "Mobile navigation",
     skipLink: "Skip to content",
     journeyLabel: "Career and education milestones",
-    sceneLabel: "Muath’s VR portrait and pixel character",
+    sceneLabel: "Portraits of Muath and scenes from his work",
     sceneControls: "Scene layers",
     realSceneTitle: "Makkah, Saudi Arabia",
     realSceneLink: "Meet Muath ↗",
@@ -184,12 +183,11 @@ const translations = {
     navSkills: "Skills",
     navAbout: "About",
     navContact: "Contact",
-    heroEyebrow: "MAKKAH, SAUDI ARABIA",
+    heroEyebrow: "Makkah, Saudi Arabia",
     heroName: "Muath Alsulami",
-    heroRole: "Software development · AI integration",
-    heroLead:
-      "I build web interfaces and integrate AI models. My co-op at the National Center for Meteorology focused on monitoring services.",
-    viewWork: "Selected work",
+    heroRole: "I build web interfaces and connect them to AI models.",
+    heroLead: "For Numoo, I built the interface between the user and the prediction models my teammates developed.",
+    viewWork: "Explore my work on Numoo",
     professionalSummary: "Professional summary",
     location: "Makkah, Saudi Arabia",
     railOne: "B.Sc. Artificial Intelligence",
@@ -866,7 +864,7 @@ const stageDetails = {
   },
 };
 let lang = "ar",
-  theme = "dark",
+  theme = "light",
   activeFilter = "all",
   activeStage = "build",
   lastOpener = null;
@@ -1043,7 +1041,7 @@ function applyTheme(next) {
   document.documentElement.dataset.theme = next;
   get("themeToggle").setAttribute("aria-pressed", String(next === "light"));
   document.querySelector('meta[name="theme-color"]').content =
-    next === "light" ? "#f9f4ef" : "#100b21";
+    next === "light" ? "#f7f3ea" : "#100b21";
   try {
     localStorage.setItem("muath-theme", next);
   } catch {}
@@ -1177,7 +1175,7 @@ function initialize() {
     const remembered = localStorage.getItem("muath-lang");
     if (remembered === "en") lang = "en";
     const th = localStorage.getItem("muath-theme");
-    if (th === "light") theme = "light";
+    if (th === "light" || th === "dark") theme = th;
   } catch {}
   applyTheme(theme);
   applyLang(lang);

@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ar" dir="rtl" data-lang="ar" data-theme="dark">
+<html lang="ar" dir="rtl" data-lang="ar" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1,viewport-fit=cover"
     />
-    <meta name="theme-color" content="#100b21" />
+    <meta name="theme-color" content="#f7f3ea" />
     <meta
       name="description"
       content="معاذ السلمي — مطور برمجيات وخريج ذكاء اصطناعي. تطوير الواجهات وتكامل الحلول ومراقبة الأنظمة، مع مشاريع مكتملة ومفاهيم قيد البحث."
@@ -23,7 +23,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Muath Alsulami's VR portrait and pixel character"
+      content="Muath Alsulami · Web interfaces and AI integration"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:type" content="website" />
@@ -176,7 +176,7 @@
           <div class="hero-copy">
             <p class="eyebrow accent-eyebrow">
               <span class="eyebrow-line"></span
-              ><span data-i18n="heroEyebrow">من مكة، إلى العالم الرقمي</span>
+              ><span data-i18n="heroEyebrow">مكة المكرمة</span>
             </p>
             <h1 id="heroTitle">
               <strong data-i18n="heroName">معاذ السلمي</strong>
@@ -187,16 +187,11 @@
             <p id="heroArabic" class="hero-ar" lang="ar" dir="rtl" hidden>
               معاذ السلمي
             </p>
-            <p class="hero-role" data-i18n="heroRole">
-              تطوير البرمجيات · تكامل الذكاء الاصطناعي
-            </p>
-            <p class="hero-lead" data-i18n="heroLead">
-              أطوّر واجهات الويب وأربطها بنماذج الذكاء الاصطناعي. تعلّمت مراقبة
-              الأنظمة عمليًا خلال تدريبي في المركز الوطني للأرصاد.
-            </p>
+            <p class="hero-role" data-i18n="heroRole">أبني واجهات ويب وأربطها بنماذج الذكاء الاصطناعي.</p>
+            <p class="hero-lead" data-i18n="heroLead">في مشروع نمو، بنيت الواجهة التي تصل بين المستخدم ونماذج التنبؤ التي طوّرها زملائي.</p>
             <div class="hero-ctas">
-              <a href="#work" class="button button-primary"
-                ><span data-i18n="viewWork">استكشف أعمالي</span
+              <a href="#numoo-heading" class="button button-primary"
+                ><span data-i18n="viewWork">شاهد كيف بنيت نمو</span
                 ><svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h14m-7-7 7 7-7 7" /></svg></a
               ><a href="professional-summary.html" class="button button-outline"
@@ -228,10 +223,10 @@
           <div
             class="hero-scene"
             id="heroScene"
-            data-view="pixel"
+            data-view="real"
             role="group"
             data-i18n-label="sceneLabel"
-            aria-label="مشهد فني يجمع الصورة الحقيقية بنظارة الواقع الافتراضي وشخصية البكسل"
+            aria-label="صور معاذ ومشاهد من أعماله"
           >
             <div class="hero-sky" aria-hidden="true">
               <img
@@ -244,13 +239,14 @@
                 alt=""
                 width="1540"
                 height="867"
-                fetchpriority="high"
+                loading="lazy"
               />
             </div>
             <div class="hero-orb"></div>
             <div class="hero-gridlines"></div>
             <div class="hero-portrait">
               <img
+                loading="lazy"
                 src="assets/vr-person.webp"
                 srcset="
                   assets/vr-person-540.webp 540w,
@@ -271,6 +267,7 @@
             </div>
             <div class="hero-pixel">
               <img
+                loading="lazy"
                 src="assets/pixel-muath.webp"
                 srcset="
                   assets/pixel-muath-540.webp 540w,
@@ -294,7 +291,8 @@
                 type="button"
                 data-view="real"
                 data-i18n="sceneReal"
-                aria-pressed="false"
+                class="is-active"
+                aria-pressed="true"
               >
                 الواقع
               </button>
@@ -302,8 +300,7 @@
                 type="button"
                 data-view="pixel"
                 data-i18n="scenePixel"
-                class="is-active"
-                aria-pressed="true"
+                aria-pressed="false"
               >
                 البكسل
               </button>
@@ -317,17 +314,18 @@
               </button>
             </div>
             <div class="scene-light" aria-hidden="true"></div>
-            <div class="scene-portrait-real" hidden aria-hidden="true">
+            <div class="scene-portrait-real">
               <img
                 src="assets/meeting.webp"
                 width="570"
                 height="740"
-                alt=""
-                loading="lazy"
+                data-i18n-alt="meetingAlt"
+                alt="معاذ السلمي خلال اجتماع"
+                fetchpriority="high"
                 decoding="async"
               />
             </div>
-            <div class="scene-real" inert aria-hidden="true">
+            <div class="scene-real" aria-hidden="false">
               <strong data-i18n="realSceneTitle">مكة المكرمة</strong>
               <a href="#about" data-i18n="realSceneLink">تعرّف عليّ ↗</a>
             </div>
@@ -410,24 +408,27 @@
                 ><span aria-hidden="true">↗</span>
               </button>
             </div>
-            <figure class="work-flow">
-              <figcaption data-i18n="flowCaption">
-                مسار التكامل · رسم توضيحي
-              </figcaption>
+            <figure class="work-flow" id="numoo-trace">
+              <figcaption data-i18n="flowCaption">جرّب التكامل · محاكاة تعليمية</figcaption>
               <ol aria-label="مسار التكامل" data-i18n-label="flowLabel">
                 <li>
                   <b data-i18n="flowInterface">واجهة التطبيق</b
-                  ><span data-i18n="flowInput">استقبال المدخلات</span>
+                  ><span data-i18n="flowInput">تجهيز مثال للطلب</span>
                 </li>
                 <li>
                   <b lang="en">Flask</b
-                  ><span data-i18n="flowService">ربط الطلب بالمخرجات</span>
+                  ><span data-i18n="flowService">تمرير المدخلات إلى النموذج</span>
                 </li>
                 <li>
                   <b data-i18n="flowModel">نماذج الفريق</b
-                  ><span data-i18n="flowOutput">إعادة النتيجة للعرض</span>
+                  ><span data-i18n="flowOutput">إرجاع نتيجة للواجهة</span>
                 </li>
               </ol>
+              <div class="trace-console" hidden>
+                <p class="trace-value" dir="ltr"><code id="traceWire"></code></p>
+                <p id="traceStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+                <button id="traceNext" type="button"></button>
+              </div>
             </figure>
           </article>
           <div class="work-support reveal">
