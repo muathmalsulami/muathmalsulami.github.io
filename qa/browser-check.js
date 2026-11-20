@@ -130,6 +130,8 @@ async page => {
   const staticPage = await noScript.newPage();
   await staticPage.goto(url);
   check(await staticPage.locator('.static-nav a[href="#work"]').isVisible(),'No-JS work navigation');
+  check(await staticPage.locator('.static-nav a[href="#skills"]').isVisible(),'No-JS skills navigation');
+  check(await staticPage.locator('#skills noscript p').first().isVisible(),'No-JS skills content');
   check(await staticPage.locator('.feature-link').first().isHidden(),'No-JS dead case button');
   check(await staticPage.getByRole('heading',{name:'معاذ السلمي',exact:true}).isVisible(),'No-JS homepage identity');
   await noScript.close();

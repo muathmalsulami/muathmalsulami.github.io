@@ -1124,19 +1124,22 @@ function openCase(id, opener) {
   }
   const labMode = { numoo: "integrate", ncm: "observe" }[id];
   if (labMode) {
+    const labUrl = new URL(location.href);
+    labUrl.searchParams.delete("case");
+    labUrl.hash = "lab-" + labMode;
     const demo = document.createElement("a");
-    demo.href = "#evidence";
+    demo.href = labUrl.href;
     demo.textContent = t("caseDemo");
     demo.addEventListener("click", (event) => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
         return;
       event.preventDefault();
       lastOpener = null;
+      history.pushState(null, "", labUrl);
       get("projectDialog").close();
       document.dispatchEvent(
         new CustomEvent("portfolio:lab", { detail: labMode }),
       );
-      location.hash = "evidence";
       get("lab-" + labMode).focus({ preventScroll: true });
       get("evidence").scrollIntoView();
     });
@@ -1285,7 +1288,21 @@ function initialize() {
   get("projectDialog").addEventListener("click", (e) => {
     if (e.target === get("projectDialog")) get("projectDialog").close();
   });
-  get("projectDialog").addEventListener("close", () => lastOpener?.focus());
+  const projectDialog = get("projectDialog");
+  projectDialog.addEventListener("close", () => {
+    if (projectDialog.open) return;
+    const url = new URL(location.href);
+    if (url.searchParams.get("case") === projectDialog.dataset.case) {
+      url.searchParams.delete("case");
+      history.replaceState(history.state, "", url);
+    }
+    lastOpener?.focus();
+  });
+  addEventListener("popstate", () => {
+    const caseId = new URLSearchParams(location.search).get("case");
+    if (caseId) openCase(caseId);
+    else if (projectDialog.open) projectDialog.close();
+  });
   document.querySelectorAll(".filter-buttons button").forEach((b) =>
     b.addEventListener("click", () => {
       activeFilter = b.dataset.filter;

@@ -552,6 +552,11 @@
     document.addEventListener("portfolio:lab", (event) =>
       setDemo(event.detail, "steady"),
     );
+    const openLinkedDemo = () => {
+      const mode = location.hash.match(/^#lab-(observe|integrate)$/)?.[1];
+      if (mode) setDemo(mode, "steady");
+    };
+    addEventListener("hashchange", openLinkedDemo);
     if (/Mac|iPhone|iPad/.test(navigator.platform))
       $(".command-shortcut").textContent = "⌘ K";
     const scene = $("#heroScene");
@@ -633,6 +638,7 @@
         updateTranslations();
     }).observe(root, { attributes: true, attributeFilter: ["data-lang"] });
     updateTranslations();
+    openLinkedDemo();
   }
   if (document.readyState === "loading")
     document.addEventListener("DOMContentLoaded", init);
