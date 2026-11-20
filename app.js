@@ -1032,8 +1032,8 @@ function applyLang(next) {
   renderJourney();
   renderStage(activeStage);
   document.title = lv
-    ? "معاذ السلمي — MUATH / Atelier"
-    : "Muath Alsulami — MUATH / Atelier";
+    ? "معاذ السلمي | Muath Alsulami"
+    : "Muath Alsulami | معاذ السلمي";
   try {
     localStorage.setItem("muath-lang", next);
   } catch {}

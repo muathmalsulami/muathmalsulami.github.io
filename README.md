@@ -1,4 +1,4 @@
-# MUATH · ATELIER 09
+# Muath Alsulami
 
 Muath Alsulami’s bilingual portfolio for software development, Flask integration, and systems observability. The homepage introduces Muath and his visual identity, leads with Numoo, NCM, and Git × Pathy, and labels the stage of each project in the atlas.
 
