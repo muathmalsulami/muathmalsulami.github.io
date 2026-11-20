@@ -21,7 +21,8 @@ Use the semantic properties in CSS for text, surfaces, borders, and state. The p
 
 ## Behavior
 
-- Real reveals the Makkah/about route, Pixel presents the approved double portrait, and Proof links to selected cases. The focal point stays on the VR portrait and pixel character.
+- Real reveals a framed photograph and the Makkah/about route. Pixel presents the approved double portrait and responds to fine-pointer movement. Proof uses the same stage to surface selected work. A finite pixel animation distinguishes switches between the three modes.
+- Selected work leads with an annotated description of the Numoo integration flow. Other cases use a compact hierarchy of title, contribution, status, and action. The atlas and skills use rows so exploratory work remains easy to scan.
 - Controls show hover, keyboard focus, and pressed/selected states. Inactive scene panels are inert and hidden from accessibility APIs. Native dialogs contain focus and return it on dismissal. Search provides counts, an empty state, active suggestion feedback, and keyboard navigation. The lab and method tabs support arrow keys, Home, and End.
 - Micro-interactions use about 180ms. Portrait transitions use 420ms with `cubic-bezier(.2,.75,.24,1)`. Motion uses a single opening line fade, restrained fine-pointer parallax, and a short event-driven pixel transition. Reduced-motion mode removes those effects. No live loading indicator is necessary for synchronous local content.
 - Vendor marks are static SVGs presented on neutral tiles. Concept icons use the same footprint and a separate visual treatment. Avoid scaling marks independently of their aspect ratio. See [brand sources](BRAND_ASSETS.md).

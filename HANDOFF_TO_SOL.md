@@ -1,6 +1,6 @@
 # Handoff to Sol
 
-Candidate for `muathmalsulami/muathmalsulami.github.io`. The local branch is `main`. The tag `atelier-09-candidate` identifies this handoff. Run `git status --short --branch` and `git rev-parse atelier-09-candidate` to verify the clean tree and candidate commit. There is no configured remote. The editable baseline is `8ee7ca1b937f490a97584eb0dfe8cecc766212c0`. The original ZIP remains recoverable in Downloads.
+Candidate for `muathmalsulami/muathmalsulami.github.io`. The local branch is `main`. The tag `atelier-09-polished` identifies the current handoff. Run `git status --short --branch` and `git rev-parse atelier-09-polished` to verify the clean tree and candidate commit. The previous candidate remains tagged `atelier-09-candidate`. There is no configured remote. The editable source baseline is `8ee7ca1b937f490a97584eb0dfe8cecc766212c0`. The original ZIP remains recoverable in Downloads.
 
 ## Changed files
 
@@ -10,6 +10,7 @@ Candidate for `muathmalsulami/muathmalsulami.github.io`. The local branch is `ma
 - `assets/` keeps the original identity and illustrative artwork. It adds small WebP variants, local font subsets and license notices, plus a 1200 × 630 JPEG share card. Twelve unused generic tool vectors were removed from `assets/icons`. The twelve vendor SVGs remain in `assets/brand-logos`.
 - `.github/workflows/pages.yml` stages and deploys the static files. `.gitignore` excludes generated and working files. The English and Arabic readmes, content audit, design decisions, QA report, and this file document the candidate. Browser checks are under `qa/`.
 - `dist/MUATH_Atelier_Standalone.html` is an optional local output. The website is edited in the source files.
+- The refinement is documented in `CRITIQUE_AR.md`. Verify the distinct Real, Pixel and Proof views, the evidence index, copyable case links and case-to-lab routes. The focused browser check is in `qa/refinement-check.js`.
 
 ## Independent preflight
 

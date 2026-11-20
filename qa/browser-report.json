@@ -244,5 +244,18 @@
     }
   ],
   "errors": [],
-  "flows": "passed"
+  "flows": "passed",
+  "refinement": {
+    "sceneStates": "passed",
+    "pixelLifecycle": "passed",
+    "caseShare": "passed",
+    "caseToLab": "passed",
+    "scrollNavigation": "passed"
+  },
+  "distribution": {
+    "stagedMobileDpr": 3,
+    "standaloneCase": true,
+    "standaloneSummary": true,
+    "assetErrors": []
+  }
 }

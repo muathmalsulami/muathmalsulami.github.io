@@ -7,6 +7,24 @@ const assetPath = (path) => EMBEDDED[path] || path;
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const translations = {
   ar: {
+    sceneReal: "الواقع",
+    scenePixel: "البكسل",
+    sceneProof: "الأعمال",
+    numooContext: "مشروع تخرج جماعي · 2026",
+    ncmContext: "تدريب تعاوني · 2025",
+    pathyContext: "موقع منشور · 2026",
+    flowCaption: "مسار التكامل · رسم توضيحي",
+    flowLabel: "مسار التكامل",
+    flowInterface: "واجهة التطبيق",
+    flowInput: "استقبال المدخلات",
+    flowService: "ربط الطلب بالمخرجات",
+    flowModel: "نماذج الفريق",
+    flowOutput: "إعادة النتيجة للعرض",
+    caseDemo: "جرّب الشرح التفاعلي ↗",
+    copyCase: "نسخ رابط الدراسة",
+    caseCopied: "تم نسخ رابط الدراسة.",
+    caseCopyManual: "الرابط محدّد، انسخه من الحقل.",
+    caseUrlLabel: "رابط الدراسة",
     skillLearning: "تعلّم",
     skillTool: "أداة",
     skillPractice: "ممارسة",
@@ -81,9 +99,8 @@ const translations = {
     tabIntegrate: "أربط",
     tabObserve: "أراقب",
     methodDisclaimer: "مخطط توضيحي، وليس بيانات تشغيل مباشرة.",
-    skillsTitle: "كل أداة لها <em>صورة ودليل.</em>",
-    skillsIntro:
-      "مهارات مستخدمة في مشاريع أو تدريب، وأخرى ضمن الدراسة والاستكشاف. أعرضها بشكل مختلف بحسب قوة الدليل، وليس بنسب إتقان غير قابلة للقياس.",
+    skillsTitle: "الأدوات في سياق العمل",
+    skillsIntro: "أين استخدمت كل أداة، وما الذي أتعلمه الآن.",
     skillsGroupOne: "التطوير والتكامل",
     skillsGroupTwo: "المراقبة والبنية التشغيلية",
     skillsGroupThree: "الأدوات والمنهجيات والتجارب",
@@ -120,6 +137,24 @@ const translations = {
     tabGroup: "طريقة العمل",
   },
   en: {
+    sceneReal: "Real",
+    scenePixel: "Pixel",
+    sceneProof: "Proof",
+    numooContext: "Team capstone · 2026",
+    ncmContext: "Co-op internship · 2025",
+    pathyContext: "Published website · 2026",
+    flowCaption: "Integration flow · Illustration",
+    flowLabel: "Integration flow",
+    flowInterface: "Web interface",
+    flowInput: "Collect input",
+    flowService: "Connect the request to model output",
+    flowModel: "Team models",
+    flowOutput: "Return a result to display",
+    caseDemo: "Try the interactive demo ↗",
+    copyCase: "Copy case link",
+    caseCopied: "Case link copied.",
+    caseCopyManual: "The link is selected for copying.",
+    caseUrlLabel: "Case study URL",
     skillLearning: "Learning",
     skillTool: "Tool",
     skillPractice: "Practice",
@@ -194,9 +229,8 @@ const translations = {
     tabIntegrate: "Integrate",
     tabObserve: "Observe",
     methodDisclaimer: "Illustrative diagram, not live telemetry.",
-    skillsTitle: "Every tool has <em>a visual and evidence.</em>",
-    skillsIntro:
-      "Some capabilities are supported by project or internship work; others belong to academic learning and exploration. I distinguish evidence instead of using invented proficiency percentages.",
+    skillsTitle: "Tools in practice",
+    skillsIntro: "Where I used each tool and what I am learning.",
     skillsGroupOne: "Development & Integration",
     skillsGroupTwo: "Observability & Systems",
     skillsGroupThree: "Tools, Methods & Exploration",
@@ -756,7 +790,6 @@ const milestones = [
       "الانطلاق في بكالوريوس العلوم في الذكاء الاصطناعي بجامعة أم القرى.",
       "Started the B.Sc. in Artificial Intelligence at Umm Al-Qura University.",
     ],
-    tag: "EDUCATION",
   },
   {
     when: "2025",
@@ -765,7 +798,6 @@ const milestones = [
       "تدريب تعاوني في جدة من أبريل إلى يوليو، مع أدوات مراقبة وحاويات.",
       "April–July co-op in Jeddah working with observability and containers.",
     ],
-    tag: "PRACTICE",
   },
   {
     when: "2026",
@@ -774,7 +806,6 @@ const milestones = [
       "تخرجت في 28 يونيو بمرتبة الشرف الثانية، بعد مساهمة في مشروع التخرج الجماعي.",
       "Graduated June 28 with Second Class Honors following team capstone work.",
     ],
-    tag: "MILESTONE",
   },
   {
     when: "2026",
@@ -783,7 +814,6 @@ const milestones = [
       "إتمام مشروع تدريبي باستخدام Git وGitHub ونشر موقع قابل للفحص.",
       "Completed a Git/GitHub learning project and published a live site.",
     ],
-    tag: "PUBLISHED",
   },
   {
     when: "NOW",
@@ -792,7 +822,6 @@ const milestones = [
       "تطوير أفكار بحثية وموقع شخصي، مع تمييز مراحل التنفيذ.",
       "Developing research ideas and a portfolio while clearly labeling their stage.",
     ],
-    tag: "EXPLORING",
   },
 ];
 const stageDetails = {
@@ -862,7 +891,14 @@ function renderProjects() {
     .map((p) => {
       const title = esc(p.title[lang === "ar" ? 0 : 1]);
       const desc = esc(p.short[lang === "ar" ? 0 : 1]);
-      return `<article class="atlas-card" data-state="${p.state}"><div class="atlas-art"><img src="${assetPath(`assets/project-art/${p.id}.svg`)}" width="700" height="330" alt="${esc(t("artNote"))}: ${title}" loading="lazy" decoding="async"><span class="art-note">${esc(t("artNote"))}</span></div><div class="atlas-body"><div class="atlas-topline"><span class="state-chip ${p.state}">${esc(t("status" + p.state[0].toUpperCase() + p.state.slice(1)))}</span><span class="atlas-num">${p.year}</span></div><h3>${title}</h3><p>${desc}</p><div class="atlas-tags" lang="en">${p.tags.map((x) => `<span>${esc(x)}</span>`).join("")}</div><button class="atlas-open" type="button" data-project="${p.id}" aria-label="${esc(t("case"))}: ${title}"><span>${esc(t("case"))}</span><span aria-hidden="true">↗</span></button></div></article>`;
+      return `<article class="atlas-card" data-state="${p.state}">
+        <div class="atlas-art" aria-hidden="true"><img src="${assetPath(`assets/project-art/${p.id}.svg`)}" width="700" height="330" alt="" loading="lazy" decoding="async"></div>
+        <div class="atlas-body">
+          <span class="state-chip ${p.state}">${esc(t("status" + p.state[0].toUpperCase() + p.state.slice(1)))}</span>
+          <h3>${title}</h3><p>${desc}</p>
+        </div>
+        <button class="atlas-open" type="button" data-project="${p.id}" aria-label="${esc(t("case"))}: ${title}"><span>${esc(t("case"))}</span><span aria-hidden="true">↗</span></button>
+      </article>`;
     })
     .join("");
 }
@@ -902,9 +938,12 @@ function renderSkills() {
             ? t("skillTool")
             : t("skillPractice");
         return `<article class="skill-card ${mark ? "with-brand" : "with-concept"}" data-skill="${s.key}">
-    <div class="skill-header"><span class="skill-icon ${mark ? "brand-lockup" : "concept-lockup"}" aria-hidden="true"><img src="${assetPath(path)}" width="44" height="44" alt="" loading="lazy" decoding="async"></span><span class="skill-category">${category}</span></div>
-    <h3>${esc(s.name)}</h3><p>${esc(s.desc[lang === "ar" ? 0 : 1])}</p>
-    <div class="skill-evidence ${s.learning ? "is-learning" : ""}"><span class="evidence-line" aria-hidden="true"></span>${esc(s.proof)}</div>
+    <span class="skill-icon ${mark ? "brand-lockup" : "concept-lockup"}" aria-hidden="true"><img src="${assetPath(path)}" width="44" height="44" alt="" loading="lazy" decoding="async"></span>
+    <div class="skill-description">
+      <h3><bdi lang="en">${esc(s.name)}</bdi></h3>
+      <p>${esc(s.desc[lang === "ar" ? 0 : 1])}</p>
+      <div class="skill-evidence ${s.learning ? "is-learning" : ""}"><span>${category}</span><span aria-hidden="true"> · </span><bdi>${esc(s.proof)}</bdi></div>
+    </div>
    </article>`;
       })
       .join("");
@@ -914,7 +953,7 @@ function renderJourney() {
   get("journeyTrack").innerHTML = milestones
     .map(
       (m) =>
-        `<article class="journey-item"><span class="journey-dot" aria-hidden="true"></span><div class="journey-card"><span class="journey-year">${m.when}</span><h3>${esc(m.title[lang === "ar" ? 0 : 1])}</h3><p>${esc(m.text[lang === "ar" ? 0 : 1])}</p><span class="journey-label">${m.tag}</span></div></article>`,
+        `<article class="journey-item"><span class="journey-dot" aria-hidden="true"></span><div class="journey-card"><span class="journey-year">${m.when === "NOW" && lang === "ar" ? "الآن" : m.when}</span><h3>${esc(m.title[lang === "ar" ? 0 : 1])}</h3><p>${esc(m.text[lang === "ar" ? 0 : 1])}</p></div></article>`,
     )
     .join("");
 }
@@ -1046,6 +1085,12 @@ function openCase(id, opener) {
   if (!p) return;
   if (get("projectDialog").open) return;
   lastOpener = opener || document.activeElement;
+  get("projectDialog").dataset.case = id;
+  get("caseShareStatus").textContent = "";
+  get("caseShareUrl").hidden = true;
+  get("caseCopy").hidden =
+    location.protocol === "file:" ||
+    location.pathname.endsWith("MUATH_Atelier_Standalone.html");
   const details = Object.hasOwn(caseDetails, id) ? caseDetails[id][lang] : null;
   get("modalObjectiveBlock").hidden = !details;
   get("modalNextBlock").hidden = !details;
@@ -1076,6 +1121,26 @@ function openCase(id, opener) {
           ? t("linkBlog")
           : t("linkProject")) + " ↗";
     get("modalLinks").appendChild(a);
+  }
+  const labMode = { numoo: "integrate", ncm: "observe" }[id];
+  if (labMode) {
+    const demo = document.createElement("a");
+    demo.href = "#evidence";
+    demo.textContent = t("caseDemo");
+    demo.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+        return;
+      event.preventDefault();
+      lastOpener = null;
+      get("projectDialog").close();
+      document.dispatchEvent(
+        new CustomEvent("portfolio:lab", { detail: labMode }),
+      );
+      location.hash = "evidence";
+      get("lab-" + labMode).focus({ preventScroll: true });
+      get("evidence").scrollIntoView();
+    });
+    get("modalLinks").append(demo);
   }
   if (!p.links.length) {
     const note = document.createElement("span");
@@ -1146,18 +1211,35 @@ function initialize() {
   desktop.addEventListener("change", (event) => {
     if (event.matches) closeMobileNav();
   });
-  const updateNavigation = () => {
-    const current = location.hash || "#home";
-    document
-      .querySelectorAll(".desktop-nav a,.mobile-nav a")
-      .forEach((link) => {
-        if (link.hash === current)
-          link.setAttribute("aria-current", "location");
-        else link.removeAttribute("aria-current");
-      });
+  const navLinks = [
+    ...document.querySelectorAll(".desktop-nav a,.mobile-nav a"),
+  ];
+  const navSections = [...document.querySelectorAll("main > section[id]")];
+  const parentSections = { atlas: "work", journey: "about" };
+  let sectionOffsets = [];
+  let currentSection;
+  const measureNavigation = () => {
+    const pageTop = scrollY;
+    sectionOffsets = navSections.map((section) => ({
+      id: section.id,
+      top: section.getBoundingClientRect().top + pageTop,
+    }));
   };
-  addEventListener("hashchange", updateNavigation);
-  updateNavigation();
+  const updateNavigation = (scrollable) => {
+    const guide = scrollY + Math.min(innerHeight * 0.36, 240);
+    const reachedBottom = scrollable > 0 && scrollY >= scrollable - 4;
+    const current = reachedBottom
+      ? "contact"
+      : sectionOffsets.findLast((section) => section.top <= guide)?.id ||
+        "home";
+    const hash = "#" + (parentSections[current] || current);
+    if (currentSection === hash) return;
+    currentSection = hash;
+    for (const link of navLinks) {
+      if (link.hash === hash) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    }
+  };
   get("atlasGrid").addEventListener("click", (e) => {
     const btn = e.target.closest("[data-project]");
     if (btn) openCase(btn.dataset.project, btn);
@@ -1169,6 +1251,34 @@ function initialize() {
     );
   const deepLink = new URLSearchParams(location.search).get("case");
   if (deepLink) openCase(deepLink);
+  get("caseCopy").addEventListener("click", async () => {
+    const id = get("projectDialog").dataset.case;
+    const url = new URL(location.href);
+    url.hash = "";
+    url.search = "";
+    url.searchParams.set("case", id);
+    try {
+      await navigator.clipboard.writeText(url.href);
+      if (
+        get("projectDialog").dataset.case !== id ||
+        !get("projectDialog").open
+      )
+        return;
+      get("caseShareStatus").textContent = t("caseCopied");
+    } catch {
+      if (
+        get("projectDialog").dataset.case !== id ||
+        !get("projectDialog").open
+      )
+        return;
+      const field = get("caseShareUrl");
+      field.value = url.href;
+      field.hidden = false;
+      field.focus();
+      field.select();
+      get("caseShareStatus").textContent = t("caseCopyManual");
+    }
+  });
   get("dialogClose").addEventListener("click", () =>
     get("projectDialog").close(),
   );
@@ -1230,15 +1340,21 @@ function initialize() {
     const progress =
       scrollable > 0 ? Math.max(0, Math.min(1, scrollY / scrollable)) : 0;
     get("readingProgress").style.transform = "scaleX(" + progress + ")";
+    updateNavigation(scrollable);
     progressFrame = 0;
   };
   const scheduleProgress = () => {
     if (!progressFrame) progressFrame = requestAnimationFrame(updateProgress);
   };
   addEventListener("scroll", scheduleProgress, { passive: true });
-  addEventListener("resize", scheduleProgress);
+  const updateLayout = () => {
+    measureNavigation();
+    scheduleProgress();
+  };
+  addEventListener("resize", updateLayout);
   if ("ResizeObserver" in window)
-    new ResizeObserver(scheduleProgress).observe(document.body);
+    new ResizeObserver(updateLayout).observe(document.body);
+  measureNavigation();
   updateProgress();
   const scene = get("heroScene");
   if (scene && matchMedia("(hover:hover) and (pointer:fine)").matches) {
@@ -1247,6 +1363,14 @@ function initialize() {
       if (moveFrame || reducedMotion.matches) return;
       moveFrame = requestAnimationFrame(() => {
         const b = scene.getBoundingClientRect();
+        scene.style.setProperty(
+          "--light-x",
+          ((e.clientX - b.left) / b.width) * 100 + "%",
+        );
+        scene.style.setProperty(
+          "--light-y",
+          ((e.clientY - b.top) / b.height) * 100 + "%",
+        );
         const x = ((e.clientX - b.left) / b.width - 0.5) * 12;
         const y = ((e.clientY - b.top) / b.height - 0.5) * 9;
         scene.style.setProperty("--stage-x", `${x}px`);

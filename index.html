@@ -239,7 +239,10 @@
             <div class="hero-sky" aria-hidden="true">
               <img
                 src="assets/makkah-atmosphere.webp"
-                srcset="assets/makkah-atmosphere-720.webp 720w, assets/makkah-atmosphere.webp 1540w"
+                srcset="
+                  assets/makkah-atmosphere-720.webp  720w,
+                  assets/makkah-atmosphere.webp     1540w
+                "
                 sizes="(max-width: 720px) 95vw, (max-width: 1440px) 54vw, 760px"
                 alt=""
                 width="1540"
@@ -255,7 +258,10 @@
             <div class="hero-portrait">
               <img
                 src="assets/vr-person.webp"
-                srcset="assets/vr-person-540.webp 540w, assets/vr-person.webp 995w"
+                srcset="
+                  assets/vr-person-540.webp 540w,
+                  assets/vr-person.webp     995w
+                "
                 sizes="(max-width: 720px) 73vw, (max-width: 1440px) 44vw, 630px"
                 data-i18n-alt="portraitAlt"
                 alt="معاذ يرتدي نظارة الواقع الافتراضي مع وحدات التحكم"
@@ -272,7 +278,10 @@
             <div class="hero-pixel">
               <img
                 src="assets/pixel-muath.webp"
-                srcset="assets/pixel-muath-540.webp 540w, assets/pixel-muath.webp 940w"
+                srcset="
+                  assets/pixel-muath-540.webp 540w,
+                  assets/pixel-muath.webp     940w
+                "
                 sizes="(max-width: 720px) 68vw, (max-width: 1440px) 40vw, 570px"
                 width="940"
                 height="627"
@@ -290,28 +299,39 @@
               <button
                 type="button"
                 data-view="real"
+                data-i18n="sceneReal"
                 aria-pressed="false"
-                lang="en"
               >
-                Real
+                الواقع
               </button>
               <button
                 type="button"
                 data-view="pixel"
+                data-i18n="scenePixel"
                 class="is-active"
                 aria-pressed="true"
-                lang="en"
               >
-                Pixel
+                البكسل
               </button>
               <button
                 type="button"
                 data-view="proof"
+                data-i18n="sceneProof"
                 aria-pressed="false"
-                lang="en"
               >
-                Proof
+                الأعمال
               </button>
+            </div>
+            <div class="scene-light" aria-hidden="true"></div>
+            <div class="scene-portrait-real" hidden aria-hidden="true">
+              <img
+                src="assets/meeting.webp"
+                width="570"
+                height="740"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="scene-real" inert aria-hidden="true">
               <strong data-i18n="realSceneTitle">مكة المكرمة</strong>
@@ -374,100 +394,92 @@
             مشروع تخرج جماعي، وتدريب في مراقبة الأنظمة، وموقع تعليمي منشور.
           </p>
         </div>
-        <div class="featured-grid">
-          <article
-            class="feature-card feature-primary reveal"
-            aria-labelledby="numoo-heading"
-          >
-            <div class="feature-visual numoo-visual">
-              <img
-                data-i18n-alt="numooAlt"
-                src="assets/project-art/numoo.svg"
-                alt="رسم توضيحي مفاهيمي لواجهة Numoo وليس لقطة من النظام الفعلي"
-                loading="lazy"
-              /><span class="visual-disclaimer" data-i18n="visualConcept"
-                >تمثيل بصري توضيحي</span
-              >
-            </div>
-            <div class="feature-content">
-              <div class="feature-topline">
-                <span class="feature-status"
-                  ><span></span
-                  ><span data-i18n="statusCompleted">مكتمل</span></span
-                >
-              </div>
+        <div class="work-dossier">
+          <article class="work-lead reveal" aria-labelledby="numoo-heading">
+            <div class="work-intro">
+              <p class="work-kicker" data-i18n="numooContext">
+                مشروع تخرج جماعي · 2026
+              </p>
               <h3 id="numoo-heading" lang="en">Numoo</h3>
               <p data-i18n="numooFeatured">
-                مشروع تخرج جماعي للتنبؤ باتجاه الأسهم. دوري: تطوير الواجهات
-                وربطها عبر Flask بنماذج طوّرها الفريق.
+                طوّرت واجهات التطبيق وربطتها عبر Flask بنماذج تنبؤ طوّرها فريق
+                مشروع التخرج.
               </p>
-              <div class="feature-tags">
-                <span>UI / UX</span><span>Flask</span><span>Integration</span>
-              </div>
-              <button type="button" class="feature-link" data-project="numoo">
-                <span data-i18n="openCase">افتح دراسة الحالة</span
-                ><span>↗</span>
-              </button>
-            </div>
-          </article>
-          <article class="feature-card feature-side reveal">
-            <div class="feature-visual">
-              <img
-                data-i18n-alt="ncmAlt"
-                src="assets/project-art/ncm.svg"
-                alt="رسم توضيحي لمفاهيم المراقبة وليس بيانات حقيقية"
-                loading="lazy"
-              /><span class="visual-disclaimer" data-i18n="visualConcept"
-                >تمثيل بصري توضيحي</span
+              <button
+                type="button"
+                class="feature-link work-action"
+                data-project="numoo"
+                aria-labelledby="numoo-case numoo-heading"
               >
-            </div>
-            <div class="feature-content">
-              <div class="feature-topline">
-                <span class="feature-status"
-                  ><span></span
-                  ><span data-i18n="statusCompleted">مكتمل</span></span
-                >
-              </div>
-              <h3 data-i18n="ncmTitle">مراقبة الأنظمة</h3>
-              <p data-i18n="ncmFeatured">
-                أعمال تدريبية داخل تقنية المعلومات باستخدام Docker وPrometheus
-                وGrafana وLoki.
-              </p>
-              <button type="button" class="feature-link" data-project="ncm">
-                <span data-i18n="openCase">افتح دراسة الحالة</span
-                ><span>↗</span>
+                <span id="numoo-case" data-i18n="openCase"
+                  >افتح دراسة الحالة</span
+                ><span aria-hidden="true">↗</span>
               </button>
             </div>
+            <figure class="work-flow">
+              <figcaption data-i18n="flowCaption">
+                مسار التكامل · رسم توضيحي
+              </figcaption>
+              <ol aria-label="مسار التكامل" data-i18n-label="flowLabel">
+                <li>
+                  <b data-i18n="flowInterface">واجهة التطبيق</b
+                  ><span data-i18n="flowInput">استقبال المدخلات</span>
+                </li>
+                <li>
+                  <b lang="en">Flask</b
+                  ><span data-i18n="flowService">ربط الطلب بالمخرجات</span>
+                </li>
+                <li>
+                  <b data-i18n="flowModel">نماذج الفريق</b
+                  ><span data-i18n="flowOutput">إعادة النتيجة للعرض</span>
+                </li>
+              </ol>
+            </figure>
           </article>
-          <article class="feature-card feature-side reveal">
-            <div class="feature-visual">
-              <img
-                data-i18n-alt="pathyAlt"
-                src="assets/project-art/pathy.svg"
-                alt="تصميم بياني يرمز لفروع Git وتطوير موقع منشور"
-                loading="lazy"
-              /><span class="visual-disclaimer" data-i18n="visualConcept"
-                >تمثيل بصري توضيحي</span
+          <div class="work-support reveal">
+            <article class="work-row" aria-labelledby="ncm-heading">
+              <div>
+                <p class="work-kicker" data-i18n="ncmContext">
+                  تدريب تعاوني · 2025
+                </p>
+                <h3 id="ncm-heading" data-i18n="ncmTitle">مراقبة الأنظمة</h3>
+                <p data-i18n="ncmFeatured">
+                  تدريب عملي في المركز الوطني للأرصاد على الحاويات والمقاييس
+                  ولوحات المتابعة والسجلات.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="feature-link work-action"
+                data-project="ncm"
+                aria-labelledby="ncm-case ncm-heading"
               >
-            </div>
-            <div class="feature-content">
-              <div class="feature-topline">
-                <span class="feature-status"
-                  ><span></span
-                  ><span data-i18n="statusPublished">منشور</span></span
-                >
-              </div>
-              <h3>Git × Pathy</h3>
-              <p data-i18n="pathyFeatured">
-                موقع تعليمي منشور على GitHub Pages مع اهتمام بالتجاوب والأداء
-                وإمكانية الوصول.
-              </p>
-              <button type="button" class="feature-link" data-project="pathy">
-                <span data-i18n="openCase">افتح دراسة الحالة</span
-                ><span>↗</span>
+                <span id="ncm-case" data-i18n="openCase">افتح دراسة الحالة</span
+                ><span aria-hidden="true">↗</span>
               </button>
-            </div>
-          </article>
+            </article>
+            <article class="work-row" aria-labelledby="pathy-heading">
+              <div>
+                <p class="work-kicker" data-i18n="pathyContext">
+                  موقع منشور · 2026
+                </p>
+                <h3 id="pathy-heading" lang="en">Git × Pathy</h3>
+                <p data-i18n="pathyFeatured">
+                  موقع تعليمي منشور يوضّح سير العمل باستخدام Git وGitHub.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="feature-link work-action"
+                data-project="pathy"
+                aria-labelledby="pathy-case pathy-heading"
+              >
+                <span id="pathy-case" data-i18n="openCase"
+                  >افتح دراسة الحالة</span
+                ><span aria-hidden="true">↗</span>
+              </button>
+            </article>
+          </div>
         </div>
         <p>
           <a href="#atlas" class="atlas-jump" data-i18n="atlasLink"
@@ -824,17 +836,15 @@
         <div class="section-head reveal">
           <div>
             <h2 id="skillsTitle" data-i18n="skillsTitle">
-              كل أداة لها <em>صورة ودليل.</em>
+              الأدوات في سياق العمل
             </h2>
           </div>
           <p data-i18n="skillsIntro">
-            مهارات مستخدمة في مشاريع أو تدريب، وأخرى ضمن الدراسة والاستكشاف.
-            أعرضها بشكل مختلف بحسب قوة الدليل، وليس بنسب إتقان غير قابلة للقياس.
+            أين استخدمت كل أداة، وما الذي أتعلمه الآن.
           </p>
         </div>
         <div class="skills-group-label">
-          <span data-i18n="skillsGroupOne">التطوير والتكامل</span
-          ><span>01 / DEVELOPMENT</span>
+          <span data-i18n="skillsGroupOne">التطوير والتكامل</span>
         </div>
         <div class="skills-grid" id="skillsDevelopment"></div>
         <noscript
@@ -843,8 +853,7 @@
           </p></noscript
         >
         <div class="skills-group-label">
-          <span data-i18n="skillsGroupTwo">المراقبة والبنية التشغيلية</span
-          ><span>02 / SYSTEMS</span>
+          <span data-i18n="skillsGroupTwo">المراقبة والبنية التشغيلية</span>
         </div>
         <div class="skills-grid" id="skillsSystems"></div>
         <noscript
@@ -854,8 +863,7 @@
           </p></noscript
         >
         <div class="skills-group-label">
-          <span data-i18n="skillsGroupThree">الأدوات والمنهجيات والتجارب</span
-          ><span>03 / PRACTICE</span>
+          <span data-i18n="skillsGroupThree">الأدوات والمنهجيات والتجارب</span>
         </div>
         <div class="skills-grid" id="skillsPractice"></div>
         <noscript
@@ -864,7 +872,10 @@
           </p></noscript
         >
         <p class="brand-note" data-brand-note>
-          <span data-i18n="brandNote">تعرّف الشعارات بالأدوات التقنية. المهارات العامة لها رسوم توضيحية.</span>
+          <span data-i18n="brandNote"
+            >تعرّف الشعارات بالأدوات التقنية. المهارات العامة لها رسوم
+            توضيحية.</span
+          >
           <a href="BRAND_ASSETS.md" data-i18n="brandSources"
             >المصادر والتراخيص ↗</a
           >
@@ -966,7 +977,7 @@
         </div>
         <div class="atlas-controls">
           <div class="atlas-count">
-            <span id="atlasCount">13</span
+            <span id="atlasCount">10</span
             ><span data-i18n="atlasCountLabel">مشروعًا وتجربة وفكرة</span>
           </div>
           <div class="filter-buttons" role="group" aria-label="تصفية المشاريع">
@@ -1124,11 +1135,7 @@
           </button>
         </div>
         <div class="modal-heading">
-          <img
-            id="modalImage"
-            src="assets/project-art/portfolio.svg"
-            alt="تمثيل بصري توضيحي للمشروع"
-          />
+          <img id="modalImage" alt="تمثيل بصري توضيحي للمشروع" />
           <div>
             <span id="modalStatus" class="project-state"></span>
             <h2 id="modalTitle"></h2>
@@ -1158,6 +1165,20 @@
           </div>
         </div>
         <div class="modal-links" id="modalLinks"></div>
+        <div class="case-share">
+          <button type="button" id="caseCopy" data-i18n="copyCase">
+            نسخ رابط الدراسة
+          </button>
+          <p id="caseShareStatus" role="status"></p>
+          <input
+            id="caseShareUrl"
+            type="url"
+            readonly
+            hidden
+            aria-label="رابط الدراسة"
+            data-i18n-label="caseUrlLabel"
+          />
+        </div>
       </div>
     </dialog>
   </body>

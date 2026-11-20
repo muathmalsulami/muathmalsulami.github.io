@@ -9,9 +9,9 @@
   const lex = {
     ar: {
       navEvidence: "المختبر",
-      sceneProofTitle: "شخص حقيقي. وعمل يمكن التحقق منه.",
+      sceneProofTitle: "واجهات، تكامل، ومراقبة",
       sceneProofBody: "Numoo: واجهات + Flask · الأرصاد: المراقبة والسجلات",
-      sceneProofLink: "استكشف الأدلة ↗",
+      sceneProofLink: "شاهد الأعمال المختارة ↗",
       evidenceTitle: "مختبر التكامل والمراقبة",
       labTabObserve: "المراقبة",
       labTabIntegrate: "التكامل",
@@ -126,9 +126,9 @@
     },
     en: {
       navEvidence: "Lab",
-      sceneProofTitle: "A real person. Verifiable work.",
+      sceneProofTitle: "Interfaces, integration, and observability",
       sceneProofBody: "Numoo: UI + Flask · NCM: monitoring and logs",
-      sceneProofLink: "Explore evidence ↗",
+      sceneProofLink: "See selected work ↗",
       evidenceTitle: "Integration and observability lab",
       labTabObserve: "Observability",
       labTabIntegrate: "Flask integration",
@@ -269,56 +269,61 @@
   function language() {
     return root.dataset.lang === "en" ? "en" : "ar";
   }
-  function scenePixelTransition(scene) {
+  function scenePixelTransition(scene, mode) {
     if (
       matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      root.classList.contains("motion-off")
+      !Element.prototype.animate
     )
       return;
-    if (typeof Element.prototype.animate !== "function") return;
     scene
       .querySelectorAll(".scene-fragment")
       .forEach((fragment) =>
         fragment.getAnimations().forEach((animation) => animation.cancel()),
       );
-    const rect = scene.getBoundingClientRect();
-    if (!rect.width || !rect.height) return;
-    const x = rect.width * 0.46,
-      y = rect.height * 0.58;
-    for (let i = 0; i < 13; i++) {
-      const el = document.createElement("i");
-      el.className = "scene-fragment";
-      const col = i % 3 === 0 ? "#ffcda3" : i % 3 === 1 ? "#cea5ff" : "#ecb7d4";
-      const size = 3 + (i % 4) * 2;
-      el.style.cssText = `left:${x + ((i % 5) - 2) * 16}px;top:${y + ((i % 3) - 1) * 19}px;width:${size}px;height:${size}px;background:${col}`;
-      scene.appendChild(el);
-      const a = (i / 13) * Math.PI * 1.55;
-      const dx = Math.cos(a) * (((i % 4) + 1) * 19 + 20),
-        dy = -Math.sin(a) * (((i % 5) + 1) * 14 + 12);
-      const motion = el.animate(
+
+    const palette = { real: "#f4ba9b", pixel: "#cbb0f7", proof: "#a8dfcf" };
+    const color = palette[mode];
+    for (let index = 0; index < 18; index++) {
+      const column = index % 6;
+      const row = Math.floor(index / 6);
+      const cell = document.createElement("span");
+      cell.className = "scene-fragment";
+      cell.setAttribute("aria-hidden", "true");
+      cell.style.inset =
+        37 + row * 12 + "% auto auto " + (21 + column * 10) + "%";
+      cell.style.width = cell.style.height = (index % 3 === 0 ? 19 : 11) + "px";
+      cell.style.background = color;
+      scene.append(cell);
+
+      const direction = mode === "real" ? -1 : 1;
+      const horizontal = direction * (28 + column * 9);
+      const vertical = (row - 1) * 21;
+      const animation = cell.animate(
         [
-          { opacity: 0, transform: "translate(0,0) scale(.55)" },
-          { opacity: 0.86, offset: 0.18, transform: "translate(0,0) scale(1)" },
+          { opacity: 0, transform: "scale(0.2)" },
+          { opacity: 0.78, transform: "scale(1)", offset: 0.28 },
           {
             opacity: 0,
-            transform: `translate(${dx}px,${dy}px) rotate(${i % 2 ? 45 : -25}deg) scale(.2)`,
+            transform:
+              "translate(" + horizontal + "px," + vertical + "px) scale(0.35)",
           },
         ],
         {
-          duration: 580 + (i % 4) * 45,
-          easing: "cubic-bezier(.22,.64,.18,1)",
-          fill: "forwards",
+          duration: 460,
+          delay: column * 29 + row * 19,
+          easing: "cubic-bezier(.2,.75,.24,1)",
+          fill: "both",
         },
       );
-      motion.onfinish = () => el.remove();
-      motion.oncancel = () => el.remove();
+      animation.onfinish = animation.oncancel = () => cell.remove();
     }
   }
   function changeScene(mode) {
     const scene = $("#heroScene");
     if (!scene) return;
-    if (scene.dataset.view !== mode) scenePixelTransition(scene);
+    if (scene.dataset.view !== mode) scenePixelTransition(scene, mode);
     scene.dataset.view = mode;
+    $(".scene-portrait-real", scene).hidden = mode !== "real";
     for (const name of ["real", "proof"]) {
       const panel = $(".scene-" + name, scene);
       panel.inert = name !== mode;
@@ -330,7 +335,8 @@
       btn.setAttribute("aria-pressed", String(active));
     });
   }
-  function setDemo(mode, signal) {
+  let graphAnimation;
+  function setDemo(mode, signal, animateUpdate = false) {
     if (!lex[language()]) return;
     modeState.mode = mode;
     modeState.signal = signal;
@@ -380,13 +386,17 @@
     p.setAttribute("d", d);
     const area = $("#consoleArea");
     area.setAttribute("d", `${d} L540 170 L0 170 Z`);
-    p.classList.remove("is-drawing");
+    graphAnimation?.cancel();
     if (
+      animateUpdate &&
+      typeof p.animate === "function" &&
       !matchMedia("(prefers-reduced-motion: reduce)").matches &&
       !root.classList.contains("motion-off")
     ) {
-      void p.getBoundingClientRect();
-      p.classList.add("is-drawing");
+      graphAnimation = p.animate(
+        [{ strokeDashoffset: 840 }, { strokeDashoffset: 0 }],
+        { duration: 460, easing: "cubic-bezier(.2,.75,.24,1)" },
+      );
     }
   }
   const projects = [];
@@ -539,6 +549,9 @@
     if ($("#commandPalette")?.open) renderCommands($("#commandQuery").value);
   }
   function init() {
+    document.addEventListener("portfolio:lab", (event) =>
+      setDemo(event.detail, "steady"),
+    );
     if (/Mac|iPhone|iPad/.test(navigator.platform))
       $(".command-shortcut").textContent = "⌘ K";
     const scene = $("#heroScene");
@@ -548,7 +561,7 @@
     );
     $$(".proof-lab-tabs button").forEach((btn, index, all) => {
       btn.addEventListener("click", () =>
-        setDemo(btn.dataset.labMode, "steady"),
+        setDemo(btn.dataset.labMode, "steady", true),
       );
       btn.addEventListener("keydown", (e) => {
         if (["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) {
@@ -561,14 +574,14 @@
               : e.key === "End"
                 ? all.at(-1)
                 : all[(index + shift + all.length) % all.length];
-          setDemo(next.dataset.labMode, "steady");
+          setDemo(next.dataset.labMode, "steady", true);
           next.focus();
         }
       });
     });
     $$(".scenario-controls button").forEach((btn) =>
       btn.addEventListener("click", () =>
-        setDemo(modeState.mode, btn.dataset.signal),
+        setDemo(modeState.mode, btn.dataset.signal, true),
       ),
     );
     const palette = $("#commandPalette");
